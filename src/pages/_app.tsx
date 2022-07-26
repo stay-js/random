@@ -37,7 +37,7 @@ const App: AppType = ({ Component, pageProps }) => (
     </Head>
 
     <div className="flex flex-col justify-between min-h-screen">
-      <MantineProvider theme={{ primaryColor: 'teal', fontFamily: 'Roboto' }}>
+      <MantineProvider theme={{ colorScheme: 'dark', primaryColor: 'teal', fontFamily: 'Roboto' }}>
         <div>
           <Nav />
           <Component {...pageProps} />
