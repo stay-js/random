@@ -25,14 +25,9 @@ const validate = (values: Props): Errors => {
   return errors;
 };
 
-const defaultValues: Props = {
-  min: 1,
-  max: 10,
-};
-
 const LandingPage: NextPage = () => {
   const [errors, setErrors] = useState<Errors>({});
-  const [values, setValues] = useState<Props>(defaultValues);
+  const [values, setValues] = useState<Props>({ min: 1, max: 10 });
   const [number, setNumber] = useState<number | null>(null);
 
   const handleChange = ({ key, value }: InputEvent) => setValues({ ...values, [key]: value });
