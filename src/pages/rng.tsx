@@ -70,7 +70,7 @@ const LandingPage: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300">
+        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300 text-center">
           Random Number Generator
         </h1>
 
@@ -79,7 +79,7 @@ const LandingPage: NextPage = () => {
             Number: <span className="text-teal-400">{number}</span>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-col sm:flex-row">
               <NumberInput
                 className="mb-4"
                 label="Min:"

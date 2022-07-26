@@ -12,7 +12,7 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
 
   return (
     <main>
-      <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300">
+      <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300 text-center">
         Random <span className="text-teal-400">{name}</span>
       </h1>
 
