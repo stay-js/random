@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  @apply antialiased;
+}
+
+body {
+  @apply overflow-x-hidden font-sans text-white bg-neutral-800;
+}
+
+.link {
+  @apply transition-all duration-200 bg-left-bottom bg-no-repeat bg-gradient-to-r from-teal-400 to-teal-700 bg-[length:0%_2px] hover:bg-[length:100%_2px];
+}
