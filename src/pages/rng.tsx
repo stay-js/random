@@ -1,12 +1,22 @@
-import type {
-  RNGProps as Props,
-  RNGErrors as Errors,
-  RNGInputEvent as InputEvent,
-} from '../interfaces/RNG.interface';
 import type { NextPage } from 'next';
-import { useState } from 'react';
 import { NumberInput } from '@mantine/core';
 import Head from 'next/head';
+import { useState } from 'react';
+
+export interface Props {
+  min: number;
+  max: number;
+}
+
+export interface Errors {
+  min?: string;
+  max?: string;
+}
+
+export interface InputEvent {
+  key: string;
+  value: number;
+}
 
 const validate = (values: Props): Errors => {
   const errors: Errors = {};
