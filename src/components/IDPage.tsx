@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { IoRefreshSharp } from 'react-icons/io5';
-import { TbCopy } from 'react-icons/tb';
+import { TbCopy, TbRefresh } from 'react-icons/tb';
 
 const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator, name }) => {
   const [value, setValue] = useState<string>(generator());
@@ -33,7 +32,7 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
           className="flex items-center gap-1 mt-2"
           onClick={() => setValue(generator())}
         >
-          <IoRefreshSharp size={18} /> Generate New {name}
+          <TbRefresh size={18} /> Generate New {name}
         </button>
       </section>
     </main>
