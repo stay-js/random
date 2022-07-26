@@ -11,11 +11,11 @@ interface ItemProps {
 }
 
 const Item: React.FC<ItemProps> = ({ name, shortName, desc, path }) => (
-  <div className="flex flex-col justify-center p-6 duration-500 border-2 border-gray-500 rounded max-w-sm">
-    <h2 className="text-lg text-gray-200">{name}</h2>
+  <div className="p-6 border-2 border-gray-500 rounded max-w-sm">
+    <h2 className="text-lg text-gray-200 mb-1">{name}</h2>
     <p className="text-sm text-gray-400">{desc}</p>
     <Link href={path}>
-      <a className="mt-3 underline text-teal-500 decoration-dotted underline-offset-2">
+      <a className="block mt-4 underline text-teal-500 decoration-dotted underline-offset-2">
         Continue to {shortName}
       </a>
     </Link>
@@ -43,12 +43,7 @@ const LandingPage: NextPage = () => (
       />
     </Head>
 
-    <main
-      className="container mx-auto my-20 flex flex-col items-center justify-center min-h-screen p-4"
-      style={{
-        minHeight: 'calc(100vh - 15rem)',
-      }}
-    >
+    <main>
       <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300">
         Stay <span className="text-teal-400">Random</span>
       </h1>

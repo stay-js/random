@@ -14,6 +14,10 @@ body {
   @apply overflow-x-hidden font-sans text-white bg-neutral-800;
 }
 
+main {
+  @apply container mx-auto flex flex-col items-center p-4 mt-28 mb-8;
+}
+
 .link {
   @apply transition-all duration-200 bg-left-bottom bg-no-repeat bg-gradient-to-r from-teal-400 to-teal-700 bg-[length:0%_2px] hover:bg-[length:100%_2px];
 }
