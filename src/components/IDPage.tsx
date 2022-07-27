@@ -5,8 +5,8 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
   const [value, setValue] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!value) setValue(generator());
-  }, [generator, value]);
+    setValue(generator());
+  }, [generator]);
 
   const copyToClipboard = (value: string | null) => {
     if (!process.browser || !value) return;

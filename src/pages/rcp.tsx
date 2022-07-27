@@ -1,27 +1,26 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { TbRefresh } from 'react-icons/tb';
 
 const LandingPage: NextPage = () => {
-  const [hex, setHex] = useState<string | null>(null);
   const [rgb, setRgb] = useState<string | null>(null);
+  const [hex, setHex] = useState<string | null>(null);
 
-  const randomColor = () => {
-    const newHex = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    setHex(newHex);
+  const randomColor = useCallback(() => {
+    const newRgb = {
+      r: Math.floor(Math.random() * 256),
+      g: Math.floor(Math.random() * 256),
+      b: Math.floor(Math.random() * 256),
+    };
 
-    const newRgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(newHex);
-    if (!newRgb) return;
-
-    setRgb(
-      `rgb(${parseInt(newRgb[1], 16)}, ${parseInt(newRgb[2], 16)}, ${parseInt(newRgb[3], 16)})`,
-    );
-  };
+    setRgb(`rgb(${newRgb.r}, ${newRgb.g}, ${newRgb.b})`);
+    setHex(`#${newRgb.r.toString(16)}${newRgb.g.toString(16)}${newRgb.b.toString(16)}`);
+  }, []);
 
   useEffect(() => {
-    if (!hex) randomColor();
-  }, [hex, randomColor]);
+    randomColor();
+  }, [randomColor]);
 
   return (
     <>
@@ -49,14 +48,14 @@ const LandingPage: NextPage = () => {
         <section className="my-12 min-w-[20rem]">
           <div className="text-2xl mb-4 font-bold">
             <p>
-              HEX: <span style={{ color: hex! }}>{hex}</span>
+              HEX: <span style={{ color: rgb! }}>{hex}</span>
             </p>
             <p>
-              RGB: <span style={{ color: hex! }}>{rgb}</span>
+              RGB: <span style={{ color: rgb! }}>{rgb}</span>
             </p>
           </div>
 
-          <div className="w-full h-48 rounded" style={{ backgroundColor: hex! }} />
+          <div className="w-full h-48 rounded" style={{ backgroundColor: rgb! }} />
 
           <button type="button" className="flex items-center gap-1 mt-4" onClick={randomColor}>
             <TbRefresh size={18} />
