@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
 
 const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator, name }) => {
-  const [value, setValue] = useState<string>(generator());
+  const [value, setValue] = useState<string | null>(null);
 
-  const copyToClipboard = (value: string) => {
-    if (!process.browser) return;
+  useEffect(() => {
+    if (!value) setValue(generator());
+  }, [generator, value]);
+
+  const copyToClipboard = (value: string | null) => {
+    if (!process.browser || !value) return;
     navigator.clipboard.writeText(value);
   };
 

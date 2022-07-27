@@ -19,6 +19,10 @@ const LandingPage: NextPage = () => {
     );
   };
 
+  useEffect(() => {
+    if (!hex) randomColor();
+  }, [hex, randomColor]);
+
   return (
     <>
       <Head>
@@ -54,11 +58,7 @@ const LandingPage: NextPage = () => {
 
           <div className="w-full h-48 rounded" style={{ backgroundColor: hex! }} />
 
-          <button
-            type="button"
-            className="w-full text-white flex items-center gap-1 mt-4 justify-center transition-colors bg-teal-400 rounded appearance-none cursor-pointer h-9 hover:bg-gray-600"
-            onClick={randomColor}
-          >
+          <button type="button" className="flex items-center gap-1 mt-4" onClick={randomColor}>
             <TbRefresh size={18} />
             Pick a random color
           </button>
