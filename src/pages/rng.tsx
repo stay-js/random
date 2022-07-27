@@ -27,7 +27,7 @@ const validate = (values: Props): Errors => {
   if (isNaN(values.min)) errors.min = 'Min value must be a number!';
   if (isNaN(values.max)) errors.max = 'Max value must be a number!';
 
-  if (values.min > values.max || values.min === values.max) {
+  if (values.min >= values.max) {
     errors.max = 'Max value must be greater than min value!';
     errors.min = 'Min value must be less than max value!';
   }
