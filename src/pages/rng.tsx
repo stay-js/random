@@ -105,7 +105,7 @@ const LandingPage: NextPage = () => {
             </div>
 
             <input
-              className="w-full text-white transition-colors bg-teal-400 rounded appearance-none cursor-pointer h-9 hover:bg-gray-600"
+              className="w-full text-white transition-colors bg-teal-400 rounded cursor-pointer h-9 hover:bg-gray-600"
               type="submit"
               value="Generate"
             />
