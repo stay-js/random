@@ -21,7 +21,7 @@ const App: AppType = ({ Component, pageProps }) => (
 
       <meta property="og:locale" content="en_US" />
       <meta property="og:type" content="website" key="og_type" />
-      <meta property="og:site_name" content="Zétény Nagy" key="site_name" />
+      <meta property="og:site_name" content="Stay Random" key="site_name" />
 
       <meta name="url" content={`https://random.znagy.hu${useRouter().pathname}`} />
       <meta property="og:url" content={`https://random.znagy.hu${useRouter().pathname}`} />

@@ -3,25 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import items from '../utils/items';
 
-interface ItemProps {
-  name: string;
-  shortName: string;
-  desc: string;
-  path: string;
-}
-
-const Item: React.FC<ItemProps> = ({ name, shortName, desc, path }) => (
-  <div className="p-6 border-2 border-gray-500 rounded max-w-sm">
-    <h2 className="text-lg text-gray-200 mb-1">{name}</h2>
-    <p className="text-sm text-gray-400">{desc}</p>
-    <Link href={path}>
-      <a className="block mt-4 underline text-teal-500 decoration-dotted underline-offset-2">
-        Continue to {shortName}
-      </a>
-    </Link>
-  </div>
-);
-
 const LandingPage: NextPage = () => (
   <>
     <Head>
@@ -49,7 +30,15 @@ const LandingPage: NextPage = () => (
       </h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-8">
         {items.map(({ name, shortName, desc, path, id }) => (
-          <Item key={id} name={name} shortName={shortName} desc={desc} path={path} />
+          <div className="p-6 border-2 border-gray-500 rounded max-w-sm" key={id}>
+            <h2 className="text-lg text-gray-200 mb-1">{name}</h2>
+            <p className="text-sm text-gray-400">{desc}</p>
+            <Link href={path}>
+              <a className="block mt-4 underline text-teal-500 decoration-dotted underline-offset-2">
+                Continue to {shortName}
+              </a>
+            </Link>
+          </div>
         ))}
       </div>
     </main>
