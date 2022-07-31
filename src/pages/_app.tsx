@@ -3,7 +3,7 @@ import { MantineProvider } from '@mantine/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Footer from '../components/Footer';
-import Nav from '../components/Nav';
+import Navigation from '../components/Navigation';
 import '../styles/globals.css';
 
 const App: AppType = ({ Component, pageProps }) => (
@@ -39,7 +39,7 @@ const App: AppType = ({ Component, pageProps }) => (
     <div className="flex flex-col justify-between min-h-screen">
       <MantineProvider theme={{ colorScheme: 'dark', primaryColor: 'teal', fontFamily: 'Roboto' }}>
         <div>
-          <Nav />
+          <Navigation />
           <Component {...pageProps} />
         </div>
 
