@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import cuid from 'cuid';
 import Head from 'next/head';
-import IDPage from '../components/IDPage';
+import IDPage from '@components/IDPage';
 
 const LandingPage: NextPage = () => (
   <>

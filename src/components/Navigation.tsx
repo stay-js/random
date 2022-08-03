@@ -1,7 +1,7 @@
 import { Burger } from '@mantine/core';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import items from '../utils/items';
+import items from '@utils/items';
 
 const Navigation: React.FC = () => {
   const [width, setWidth] = useState<number | null>(null);

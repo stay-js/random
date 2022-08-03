@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import items from '../utils/items';
+import items from '@utils/items';
 
 const LandingPage: NextPage = () => (
   <>
