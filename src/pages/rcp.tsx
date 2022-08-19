@@ -41,12 +41,12 @@ const LandingPage: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300 text-center">
+        <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Color Picker
         </h1>
 
         <section className="my-12 min-w-[20rem]">
-          <div className="text-2xl mb-4 font-bold">
+          <div className="mb-4 text-2xl font-bold">
             <p>
               HEX: <span style={{ color: rgb! }}>{hex}</span>
             </p>
@@ -55,9 +55,9 @@ const LandingPage: NextPage = () => {
             </p>
           </div>
 
-          <div className="w-full h-48 rounded" style={{ backgroundColor: rgb! }} />
+          <div className="h-48 w-full rounded" style={{ backgroundColor: rgb! }} />
 
-          <button type="button" className="flex items-center gap-1 mt-4" onClick={randomColor}>
+          <button type="button" className="mt-4 flex items-center gap-1" onClick={randomColor}>
             <TbRefresh size={18} />
             Pick a random color
           </button>

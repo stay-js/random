@@ -43,12 +43,12 @@ const LandingPage: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300 text-center">
+        <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Thing Picker
         </h1>
 
         <section className="my-12 min-w-[20rem]">
-          <div className="text-2xl mb-4 font-bold">
+          <div className="mb-4 text-2xl font-bold">
             Thing: <span className="text-teal-400">{value}</span>
           </div>
 
@@ -65,7 +65,7 @@ const LandingPage: NextPage = () => {
             />
 
             <input
-              className="w-full text-white transition-colors bg-teal-400 rounded cursor-pointer h-9 hover:bg-gray-600"
+              className="h-9 w-full cursor-pointer rounded bg-teal-400 text-white transition-colors hover:bg-gray-600"
               type="submit"
               value="Pick"
             />

@@ -25,16 +25,16 @@ const LandingPage: NextPage = () => (
     </Head>
 
     <main>
-      <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300">
+      <h1 className="text-5xl font-extrabold text-gray-300 md:text-7xl">
         Stay <span className="text-teal-400">Random</span>
       </h1>
-      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 mt-8">
+      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map(({ name, shortName, desc, path, id }) => (
-          <div className="p-6 border-2 border-gray-500 rounded max-w-sm" key={id}>
-            <h2 className="text-lg text-gray-200 mb-1">{name}</h2>
+          <div className="max-w-sm rounded border-2 border-gray-500 p-6" key={id}>
+            <h2 className="mb-1 text-lg text-gray-200">{name}</h2>
             <p className="text-sm text-gray-400">{desc}</p>
             <Link href={path}>
-              <a className="block mt-4 underline text-teal-500 decoration-dotted underline-offset-2">
+              <a className="mt-4 block text-teal-500 underline decoration-dotted underline-offset-2">
                 Continue to {shortName}
               </a>
             </Link>

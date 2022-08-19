@@ -14,11 +14,11 @@ const Navigation: React.FC = () => {
   }, [width]);
 
   return (
-    <nav className="fixed top-0 z-50 px-6 flex items-center w-full h-16 font-sans bg-neutral-900 shadow-sm select-none place-content-between">
+    <nav className="fixed top-0 z-50 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 font-sans shadow-sm">
       <Link href="/">
         <a className="group text-xl font-bold transition-colors hover:text-teal-400">
           Stay{' '}
-          <span className="text-teal-400 group-hover:text-white transition-colors">Random</span>
+          <span className="text-teal-400 transition-colors group-hover:text-white">Random</span>
         </a>
       </Link>
 
@@ -29,7 +29,7 @@ const Navigation: React.FC = () => {
           <ul
             className={`${
               isToggled ? 'right-0' : 'right-[-100%]'
-            } flex flex-col fixed gap-8 pt-8 w-full top-16 h-screen z-50 items-center bg-neutral-800 transition-all duration-500 ease-in-out select-none`}
+            } fixed top-16 z-50 flex h-screen w-full select-none flex-col items-center gap-8 bg-neutral-800 pt-8 transition-all duration-500 ease-in-out`}
           >
             {items.map(({ id, path, name }) => (
               <li key={id}>
@@ -50,7 +50,7 @@ const Navigation: React.FC = () => {
           {items.map(({ id, path, shortName }) => (
             <li key={id}>
               <Link href={path}>
-                <a className="px-3 py-2 rounded-md hover:bg-neutral-700 transition-colors">
+                <a className="rounded-md px-3 py-2 transition-colors hover:bg-neutral-700">
                   {shortName}
                 </a>
               </Link>

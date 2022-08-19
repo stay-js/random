@@ -11,13 +11,13 @@ html {
 }
 
 body {
-  @apply overflow-x-hidden font-sans text-white bg-neutral-800;
+  @apply overflow-x-hidden bg-neutral-800 font-sans text-white;
 }
 
 main {
-  @apply container mx-auto flex flex-col items-center p-4 mt-28 mb-8;
+  @apply container mx-auto mt-28 mb-8 flex flex-col items-center p-4;
 }
 
 .link {
-  @apply transition-all duration-200 bg-left-bottom bg-no-repeat bg-gradient-to-r from-teal-400 to-teal-700 bg-[length:0%_2px] hover:bg-[length:100%_2px];
+  @apply bg-gradient-to-r from-teal-400 to-teal-700 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-200 hover:bg-[length:100%_2px];
 }

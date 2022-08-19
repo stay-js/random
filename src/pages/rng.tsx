@@ -75,20 +75,20 @@ const LandingPage: NextPage = () => {
       </Head>
 
       <main>
-        <h1 className="text-5xl md:text-7xl font-extrabold text-gray-300 text-center">
+        <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Number Generator
         </h1>
 
         <section className="my-12">
-          <div className="text-2xl mb-4 font-bold">
+          <div className="mb-4 text-2xl font-bold">
             Number: <span className="text-teal-400">{number}</span>
           </div>
           <form onSubmit={handleSubmit}>
-            <div className="flex gap-4 flex-col sm:flex-row">
+            <div className="flex flex-col gap-4 sm:flex-row">
               <NumberInput
                 className="mb-4"
                 label="Min:"
-                id="min"
+                id="minasd"
                 value={values.min}
                 onChange={(event) => handleChange({ key: 'min', value: event! })}
                 error={errors.min}
@@ -105,7 +105,7 @@ const LandingPage: NextPage = () => {
             </div>
 
             <input
-              className="w-full text-white transition-colors bg-teal-400 rounded cursor-pointer h-9 hover:bg-gray-600"
+              className="h-9 w-full cursor-pointer rounded bg-teal-400 text-white transition-colors hover:bg-gray-600"
               type="submit"
               value="Generate"
             />
