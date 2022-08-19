@@ -13,7 +13,7 @@ const Navigation: React.FC = () => {
   }, [width]);
 
   return (
-    <nav className="fixed top-0 z-50 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 font-sans shadow-sm">
+    <nav className="fixed top-0 z-50 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 shadow-sm">
       <Link href="/">
         <a className="group text-xl font-bold transition-colors hover:text-teal-400">
           Stay{' '}
