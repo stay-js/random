@@ -1,5 +1,4 @@
 import type { AppType } from 'next/dist/shared/lib/utils';
-import { MantineProvider } from '@mantine/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import Footer from '@components/Footer';
@@ -37,14 +36,12 @@ const App: AppType = ({ Component, pageProps }) => (
     </Head>
 
     <div className="flex min-h-screen flex-col justify-between">
-      <MantineProvider theme={{ colorScheme: 'dark', primaryColor: 'teal', fontFamily: 'Roboto' }}>
-        <div>
-          <Navigation />
-          <Component {...pageProps} />
-        </div>
+      <div>
+        <Navigation />
+        <Component {...pageProps} />
+      </div>
 
-        <Footer />
-      </MantineProvider>
+      <Footer />
     </div>
   </>
 );

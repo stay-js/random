@@ -1,6 +1,6 @@
 {
   "name": "random",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,11 +10,6 @@
     "lint:fix": "eslint --fix ."
   },
   "dependencies": {
-    "@emotion/react": "^11.10.0",
-    "@emotion/server": "^11.10.0",
-    "@mantine/core": "^5.1.6",
-    "@mantine/hooks": "^5.1.6",
-    "@mantine/next": "^5.1.6",
     "cuid": "^2.1.8",
     "guid": "^0.0.12",
     "next": "12.2.5",
@@ -26,12 +21,12 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.2.5",
     "@types/guid": "^1.0.0",
-    "@types/node": "18.7.3",
+    "@types/node": "18.7.6",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.33.0",
-    "@typescript-eslint/parser": "^5.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.1",
+    "@typescript-eslint/parser": "^5.33.1",
     "autoprefixer": "^10.4.8",
     "eslint": "^8.22.0",
     "eslint-config-next": "^12.2.5",

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { NumberInput } from '@mantine/core';
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -83,29 +82,47 @@ const LandingPage: NextPage = () => {
           <div className="mb-4 text-2xl font-bold">
             Number: <span className="text-teal-400">{number}</span>
           </div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-4 sm:flex-row">
-              <NumberInput
-                className="mb-4"
-                label="Min:"
-                id="minasd"
-                value={values.min}
-                onChange={(event) => handleChange({ key: 'min', value: event! })}
-                error={errors.min}
-              />
+              <div className="flex w-full flex-col gap-1">
+                <label htmlFor="min" className="w-fit font-medium dark:text-neutral-300">
+                  Min:
+                </label>
 
-              <NumberInput
-                className="mb-4"
-                label="Max:"
-                id="max"
-                value={values.max}
-                onChange={(event) => handleChange({ key: 'max', value: event! })}
-                error={errors.max}
-              />
+                <input
+                  type="number"
+                  className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+                  id="min"
+                  value={values.min}
+                  onChange={(event) =>
+                    handleChange({ key: 'min', value: Number(event.currentTarget.value) })
+                  }
+                />
+
+                {errors.min && <p className="text-xs text-red-500">{errors.min}</p>}
+              </div>
+
+              <div className="flex w-full flex-col gap-1">
+                <label htmlFor="max" className="w-fit font-medium dark:text-neutral-300">
+                  Max:
+                </label>
+
+                <input
+                  type="number"
+                  className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+                  id="max"
+                  value={values.max}
+                  onChange={(event) =>
+                    handleChange({ key: 'max', value: Number(event.currentTarget.value) })
+                  }
+                />
+
+                {errors.max && <p className="text-xs text-red-500">{errors.max}</p>}
+              </div>
             </div>
 
             <input
-              className="h-9 w-full cursor-pointer rounded bg-teal-400 text-white transition-colors hover:bg-gray-600"
+              className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
               type="submit"
               value="Generate"
             />

@@ -1,4 +1,3 @@
-import { Burger } from '@mantine/core';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import items from '@utils/items';
@@ -24,7 +23,23 @@ const Navigation: React.FC = () => {
 
       {!width || width < 1024 ? (
         <>
-          <Burger color="white" opened={isToggled} onClick={() => setIsToggled(!isToggled)} />
+          <button type="button" className="h-6 w-6" onClick={() => setIsToggled(!isToggled)}>
+            <span
+              className={`${
+                isToggled ? 'rotate-45' : '-translate-y-2'
+              } absolute block h-[2px] w-6 bg-white transition-all duration-500`}
+            />
+            <span
+              className={`${
+                isToggled && 'opacity-0'
+              } absolute block h-[2px] w-6 bg-white transition-all duration-500`}
+            />
+            <span
+              className={`${
+                isToggled ? '-rotate-45' : 'translate-y-2'
+              } absolute block h-[2px] w-6 bg-white transition-all duration-500`}
+            />
+          </button>
 
           <ul
             className={`${

@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import { Textarea } from '@mantine/core';
 import Head from 'next/head';
 import { useState, useRef } from 'react';
 
@@ -52,20 +51,23 @@ const LandingPage: NextPage = () => {
             Thing: <span className="text-teal-400">{value}</span>
           </div>
 
-          <form onSubmit={handleSubmit}>
-            <Textarea
-              className="mb-4"
-              label="Separate values with a newline."
-              id="values"
-              placeholder="Separate values with a newline."
-              ref={ref}
-              minRows={5}
-              maxRows={10}
-              autosize
-            />
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
+            <div className="flex flex-col gap-1">
+              <label htmlFor="values" className="w-fit font-medium dark:text-neutral-300">
+                Separate values with a newline.
+              </label>
+
+              <textarea
+                className="w-full resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
+                id="values"
+                rows={6}
+                placeholder="Separate values with a newline."
+                ref={ref}
+              />
+            </div>
 
             <input
-              className="h-9 w-full cursor-pointer rounded bg-teal-400 text-white transition-colors hover:bg-gray-600"
+              className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
               type="submit"
               value="Pick"
             />
