@@ -18,6 +18,11 @@ const Footer: React.FC = () => (
           GitHub
         </a>
       </Link>
+      <Link href="https://nextjs.org/">
+        <a target="_blank" className="link font-bold">
+          Next.js
+        </a>
+      </Link>
       <Link href="https://vercel.com/">
         <a target="_blank" className="link font-bold">
           Vercel
