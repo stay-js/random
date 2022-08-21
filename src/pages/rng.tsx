@@ -7,35 +7,27 @@ export interface Props {
   max: number;
 }
 
-export interface Errors {
-  min?: string;
-  max?: string;
-}
-
 export interface InputEvent {
   key: string;
   value: number;
 }
 
-const validate = (values: Props): Errors => {
-  const errors: Errors = {};
+const validate = (values: Props): string[] => {
+  const errors: string[] = [];
 
-  if (values.min === null || values.min === undefined) errors.min = 'Please specify a min value!';
-  if (values.max === null || values.max === undefined) errors.max = 'Please specify a max value!';
+  if (values.min === null || values.min === undefined) errors.push('Please specify a min value!');
+  if (values.max === null || values.max === undefined) errors.push('Please specify a max value!');
 
-  if (isNaN(values.min)) errors.min = 'Min value must be a number!';
-  if (isNaN(values.max)) errors.max = 'Max value must be a number!';
+  if (isNaN(values.min)) errors.push('Min value must be a number!');
+  if (isNaN(values.max)) errors.push('Max value must be a number!');
 
-  if (values.min >= values.max) {
-    errors.max = 'Max value must be greater than min value!';
-    errors.min = 'Min value must be less than max value!';
-  }
+  if (values.min >= values.max) errors.push('Max value must be greater than min value!');
 
   return errors;
 };
 
 const LandingPage: NextPage = () => {
-  const [errors, setErrors] = useState<Errors>({});
+  const [errors, setErrors] = useState<string[]>([]);
   const [values, setValues] = useState<Props>({ min: 1, max: 10 });
   const [number, setNumber] = useState<number | null>(null);
 
@@ -47,7 +39,7 @@ const LandingPage: NextPage = () => {
     const newErrors = validate(values);
     setErrors(newErrors);
 
-    if (Object.keys(newErrors).length === 0) {
+    if (newErrors.length === 0) {
       setNumber(Math.floor(Math.random() * (values.max - values.min + 1)) + values.min);
     }
   };
@@ -98,8 +90,6 @@ const LandingPage: NextPage = () => {
                     handleChange({ key: 'min', value: Number(event.currentTarget.value) })
                   }
                 />
-
-                {errors.min && <p className="text-xs text-red-500">{errors.min}</p>}
               </div>
 
               <div className="flex w-full flex-col gap-1">
@@ -116,10 +106,16 @@ const LandingPage: NextPage = () => {
                     handleChange({ key: 'max', value: Number(event.currentTarget.value) })
                   }
                 />
-
-                {errors.max && <p className="text-xs text-red-500">{errors.max}</p>}
               </div>
             </div>
+
+            {errors.length > 0 && (
+              <div className="flex flex-col gap-2">
+                {errors.map((error) => (
+                  <p className="text-xs text-red-500">{error}</p>
+                ))}
+              </div>
+            )}
 
             <input
               className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
