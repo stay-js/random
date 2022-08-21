@@ -112,7 +112,9 @@ const LandingPage: NextPage = () => {
             {errors.length > 0 && (
               <div className="flex flex-col gap-2">
                 {errors.map((error) => (
-                  <p className="text-xs text-red-500">{error}</p>
+                  <p className="text-xs text-red-500" key={error}>
+                    {error}
+                  </p>
                 ))}
               </div>
             )}
