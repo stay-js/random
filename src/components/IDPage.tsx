@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
 
 const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator, name }) => {
@@ -11,10 +12,13 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
   const copyToClipboard = (value: string | null) => {
     if (!process.browser || !value) return;
     navigator.clipboard.writeText(value);
+    toast.success('Copied to clipboard!');
   };
 
   return (
     <main>
+      <Toaster toastOptions={{ duration: 1000 }} />
+
       <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
         Random <span className="text-teal-400">{name}</span>
       </h1>
