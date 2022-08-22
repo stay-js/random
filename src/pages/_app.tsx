@@ -1,6 +1,7 @@
 import type { AppType } from 'next/dist/shared/lib/utils';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { Toaster } from 'react-hot-toast';
 import Footer from '@components/Footer';
 import Navigation from '@components/Navigation';
 import '@styles/globals.css';
@@ -34,6 +35,8 @@ const App: AppType = ({ Component, pageProps }) => (
       <meta name="language" content="English" />
       <meta name="rating" content="general" />
     </Head>
+
+    <Toaster toastOptions={{ duration: 1000 }} />
 
     <div className="flex min-h-screen flex-col justify-between">
       <div>
