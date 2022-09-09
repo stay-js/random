@@ -11,36 +11,37 @@
   },
   "dependencies": {
     "cuid": "^2.1.8",
+    "disable-scroll": "^0.6.0",
     "guid": "^0.0.12",
-    "next": "12.2.5",
+    "next": "12.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.3.0",
     "react-icons": "^4.4.0",
-    "uuid": "^8.3.2"
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@next/eslint-plugin-next": "^12.2.5",
+    "@next/eslint-plugin-next": "^12.3.0",
     "@types/guid": "^1.0.0",
-    "@types/node": "18.7.6",
-    "@types/react": "18.0.17",
+    "@types/node": "18.7.16",
+    "@types/react": "18.0.18",
     "@types/react-dom": "18.0.6",
     "@types/uuid": "^8.3.4",
-    "@typescript-eslint/eslint-plugin": "^5.33.1",
-    "@typescript-eslint/parser": "^5.33.1",
+    "@typescript-eslint/eslint-plugin": "^5.36.2",
+    "@typescript-eslint/parser": "^5.36.2",
     "autoprefixer": "^10.4.8",
-    "eslint": "^8.22.0",
-    "eslint-config-next": "^12.2.5",
+    "eslint": "^8.23.0",
+    "eslint-config-next": "^12.3.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react": "^7.31.8",
     "eslint-plugin-react-hooks": "^4.6.0",
     "postcss": "^8.4.16",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "tailwindcss": "^3.1.8",
-    "typescript": "^4.7.4"
+    "typescript": "^4.8.3"
   }
 }

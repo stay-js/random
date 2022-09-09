@@ -1,3 +1,4 @@
+import disableScroll from 'disable-scroll';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import items from '@utils/items';
@@ -6,11 +7,27 @@ const Navigation: React.FC = () => {
   const [width, setWidth] = useState<number | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
 
+  const handleClose = () => {
+    setIsToggled(false);
+    disableScroll.off();
+  };
+
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+
+    if (isToggled) disableScroll.off();
+    else disableScroll.on();
+  };
+
+  const handleResize = () => setWidth(window.innerWidth);
+
   useEffect(() => {
     setWidth(window.innerWidth);
 
-    window.addEventListener('resize', () => setWidth(window.innerWidth));
-  }, [width]);
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <nav className="fixed top-0 z-10 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 shadow-sm">
@@ -23,7 +40,7 @@ const Navigation: React.FC = () => {
 
       {!width || width < 1024 ? (
         <>
-          <button type="button" className="h-6 w-6" onClick={() => setIsToggled(!isToggled)}>
+          <button type="button" className="h-6 w-6" onClick={handleToggle}>
             <span
               className={`${
                 isToggled ? 'rotate-45' : '-translate-y-2'
@@ -49,10 +66,7 @@ const Navigation: React.FC = () => {
             {items.map(({ id, path, name }) => (
               <li key={id}>
                 <Link href={path}>
-                  <a
-                    className="transition-colors hover:text-teal-400"
-                    onClick={() => setIsToggled(false)}
-                  >
+                  <a className="transition-colors hover:text-teal-400" onClick={handleClose}>
                     {name}
                   </a>
                 </Link>
