@@ -1,10 +1,10 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 export interface Props {
-  min: number;
-  max: number;
+  min: string | undefined;
+  max: string | undefined;
 }
 
 export interface InputEvent {
@@ -15,32 +15,52 @@ export interface InputEvent {
 const validate = (values: Props): string[] => {
   const errors: string[] = [];
 
-  if (values.min === null || values.min === undefined) errors.push('Please specify a min value!');
-  if (values.max === null || values.max === undefined) errors.push('Please specify a max value!');
+  if (values.min === '' || values.min === undefined) errors.push('Please specify a min value!');
+  if (values.max === '' || values.max === undefined) errors.push('Please specify a max value!');
 
-  if (isNaN(values.min)) errors.push('Min value must be a number!');
-  if (isNaN(values.max)) errors.push('Max value must be a number!');
+  if (isNaN(Number(values.min))) errors.push('Min value must be a number!');
+  if (isNaN(Number(values.max))) errors.push('Max value must be a number!');
 
-  if (values.min >= values.max) errors.push('Max value must be greater than min value!');
+  if (
+    values.min === '' ||
+    values.min === undefined ||
+    values.max === '' ||
+    values.max === undefined ||
+    isNaN(Number(values.min)) ||
+    isNaN(Number(values.max))
+  )
+    return errors;
+
+  if (Number(values.min) >= Number(values.max))
+    errors.push('Max value must be greater than min value!');
 
   return errors;
 };
 
 const LandingPage: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
-  const [values, setValues] = useState<Props>({ min: 1, max: 10 });
   const [number, setNumber] = useState<number | null>(null);
-
-  const handleChange = ({ key, value }: InputEvent) => setValues({ ...values, [key]: value });
+  const minRef = useRef<HTMLInputElement>(null);
+  const maxRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    const values = {
+      min: minRef.current?.value,
+      max: maxRef.current?.value,
+    };
+
+    console.log(values);
 
     const newErrors = validate(values);
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      setNumber(Math.floor(Math.random() * (values.max - values.min + 1)) + values.min);
+      setNumber(
+        Math.floor(Math.random() * (Number(values.max) - Number(values.min) + 1)) +
+          Number(values.min),
+      );
     }
   };
 
@@ -85,10 +105,8 @@ const LandingPage: NextPage = () => {
                   type="number"
                   className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
                   id="min"
-                  value={values.min}
-                  onChange={(event) =>
-                    handleChange({ key: 'min', value: Number(event.currentTarget.value) })
-                  }
+                  defaultValue={0}
+                  ref={minRef}
                 />
               </div>
 
@@ -101,10 +119,8 @@ const LandingPage: NextPage = () => {
                   type="number"
                   className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
                   id="max"
-                  value={values.max}
-                  onChange={(event) =>
-                    handleChange({ key: 'max', value: Number(event.currentTarget.value) })
-                  }
+                  defaultValue={10}
+                  ref={maxRef}
                 />
               </div>
             </div>
