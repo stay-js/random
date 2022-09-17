@@ -51,8 +51,6 @@ const LandingPage: NextPage = () => {
       max: maxRef.current?.value,
     };
 
-    console.log(values);
-
     const newErrors = validate(values);
     setErrors(newErrors);
 
