@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 import { TbRefresh } from 'react-icons/tb';
 
-const LandingPage: NextPage = () => {
+const RandomColorPicker: NextPage = () => {
   const [rgb, setRgb] = useState<string | null>(null);
   const [hex, setHex] = useState<string | null>(null);
 
@@ -40,13 +40,13 @@ const LandingPage: NextPage = () => {
         />
       </Head>
 
-      <main>
+      <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Color Picker
         </h1>
 
-        <section className="my-12 min-w-[20rem]">
-          <div className="mb-4 text-2xl font-bold">
+        <section className="flex min-w-[20rem] flex-col gap-2">
+          <div className="text-2xl font-bold">
             <p>
               HEX: <span style={{ color: rgb! }}>{hex}</span>
             </p>
@@ -57,7 +57,7 @@ const LandingPage: NextPage = () => {
 
           <div className="h-48 w-full rounded" style={{ backgroundColor: rgb! }} />
 
-          <button type="button" className="mt-4 flex items-center gap-1" onClick={randomColor}>
+          <button type="button" className="flex items-center gap-1" onClick={randomColor}>
             <TbRefresh size={18} />
             Pick a random color
           </button>
@@ -67,4 +67,4 @@ const LandingPage: NextPage = () => {
   );
 };
 
-export default LandingPage;
+export default RandomColorPicker;

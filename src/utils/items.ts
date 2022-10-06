@@ -41,6 +41,13 @@ const items = [
     desc: 'Picks a random color and outputs HEX and RGB value.',
     id: 'cl62jrrb5000009l7hkm83ewu',
   },
+  {
+    name: 'Pasword Generator',
+    shortName: 'Password',
+    path: '/password',
+    desc: 'Generates a random secure password.',
+    id: 'cl8xf2mw500013b6mbgoxqo2y',
+  },
 ];
 
 export default items;

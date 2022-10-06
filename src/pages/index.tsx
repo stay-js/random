@@ -24,17 +24,23 @@ const LandingPage: NextPage = () => (
       />
     </Head>
 
-    <main>
+    <main className="flex flex-col gap-8">
       <h1 className="text-5xl font-extrabold text-gray-300 md:text-7xl">
         Stay <span className="text-teal-400">Random</span>
       </h1>
-      <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map(({ name, shortName, desc, path, id }) => (
-          <div className="max-w-sm rounded border-2 border-gray-500 p-6" key={id}>
-            <h2 className="mb-1 text-lg text-gray-200">{name}</h2>
-            <p className="text-sm text-gray-400">{desc}</p>
+          <div
+            className="flex max-w-sm flex-col gap-4 rounded border-2 border-gray-500 p-6"
+            key={id}
+          >
+            <div className="flex flex-col gap-1">
+              <h2 className="text-lg text-gray-200">{name}</h2>
+              <p className="text-sm text-gray-400">{desc}</p>
+            </div>
+
             <Link href={path}>
-              <a className="mt-4 block text-teal-500 underline decoration-dotted underline-offset-2">
+              <a className="block text-teal-500 underline decoration-dotted underline-offset-2">
                 Continue to {shortName}
               </a>
             </Link>

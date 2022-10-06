@@ -3,7 +3,7 @@ import guid from 'guid';
 import Head from 'next/head';
 import IDPage from '@components/IDPage';
 
-const LandingPage: NextPage = () => (
+const GUID: NextPage = () => (
   <>
     <Head>
       <title>GUID - Stay Random</title>
@@ -28,4 +28,4 @@ const LandingPage: NextPage = () => (
   </>
 );
 
-export default LandingPage;
+export default GUID;

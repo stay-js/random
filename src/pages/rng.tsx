@@ -37,7 +37,7 @@ const validate = (values: Props): string[] => {
   return errors;
 };
 
-const LandingPage: NextPage = () => {
+const RandomNumberGenerator: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [number, setNumber] = useState<number | null>(null);
   const minRef = useRef<HTMLInputElement>(null);
@@ -83,13 +83,13 @@ const LandingPage: NextPage = () => {
         />
       </Head>
 
-      <main>
+      <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Number Generator
         </h1>
 
-        <section className="my-12">
-          <div className="mb-4 text-2xl font-bold">
+        <section className="flex flex-col gap-2">
+          <div className="text-2xl font-bold">
             Number: <span className="text-teal-400">{number}</span>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
@@ -145,4 +145,4 @@ const LandingPage: NextPage = () => {
   );
 };
 
-export default LandingPage;
+export default RandomNumberGenerator;

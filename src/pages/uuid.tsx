@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { v4 } from 'uuid';
 import IDPage from '@components/IDPage';
 
-const LandingPage: NextPage = () => (
+const UUID: NextPage = () => (
   <>
     <Head>
       <title>UUID - Stay Random</title>
@@ -28,4 +28,4 @@ const LandingPage: NextPage = () => (
   </>
 );
 
-export default LandingPage;
+export default UUID;

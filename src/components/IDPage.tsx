@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import toast from 'react-hot-toast';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
+import copyToClipboard from '@utils/copyToClipboard';
 
 const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator, name }) => {
   const [value, setValue] = useState<string | null>(null);
@@ -9,22 +9,16 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
     setValue(generator());
   }, [generator]);
 
-  const copyToClipboard = (value: string | null) => {
-    if (!process.browser || !value) return;
-    navigator.clipboard.writeText(value);
-    toast.success('Copied to clipboard!');
-  };
-
   return (
-    <main>
+    <main className="flex flex-col gap-12">
       <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
         Random <span className="text-teal-400">{name}</span>
       </h1>
 
-      <section className="my-12 min-w-[55%]">
+      <section className="flex min-w-[75%] flex-col gap-2 md:min-w-[55%]">
         <p className="border px-4 py-2 text-xl font-bold">{value}</p>
 
-        <div className="mt-2 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
             type="button"
             className="flex items-center gap-1"
