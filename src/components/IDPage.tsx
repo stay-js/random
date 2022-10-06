@@ -15,7 +15,7 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
         Random <span className="text-teal-400">{name}</span>
       </h1>
 
-      <section className="flex min-w-[75%] flex-col gap-2 md:min-w-[55%]">
+      <section className="flex min-w-full flex-col gap-2 md:min-w-[55%]">
         <p
           className="max-w-full border px-4 py-2 text-xl font-bold"
           style={{ overflowWrap: 'anywhere' }}

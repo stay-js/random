@@ -88,7 +88,7 @@ const RandomNumberGenerator: NextPage = () => {
           Random Number Generator
         </h1>
 
-        <section className="flex flex-col gap-2">
+        <section className="flex min-w-[20rem] flex-col gap-2">
           <div className="text-2xl font-bold">
             Number: <span className="text-teal-400">{number}</span>
           </div>
