@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import items from '@utils/items';
 
-const LandingPage: NextPage = () => (
+const Home: NextPage = () => (
   <>
     <Head>
       <title>Stay Random</title>
@@ -51,4 +51,4 @@ const LandingPage: NextPage = () => (
   </>
 );
 
-export default LandingPage;
+export default Home;
