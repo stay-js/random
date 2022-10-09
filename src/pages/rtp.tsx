@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { useState, useRef } from 'react';
+import Layout from '@layouts/Layout';
 
 export interface InputEvent {
   key: string;
@@ -21,26 +21,11 @@ const RandomThingPicker: NextPage = () => {
   };
 
   return (
-    <>
-      <Head>
-        <title>RTP - Stay Random</title>
-        <meta property="og:title" content="RTP - Stay Random" key="title" />
-        <meta name="twitter:title" content="RTP- Stay Random" />
-
-        <meta
-          name="description"
-          content="Randomly picks a value from a list of specified values."
-        />
-        <meta
-          property="og:description"
-          content="Randomly picks a value from a list of specified values."
-        />
-        <meta
-          name="twitter:description"
-          content="Randomly picks a value from a list of specified values."
-        />
-      </Head>
-
+    <Layout
+      path="/rtp"
+      title="RTP - Stay Random"
+      desc="Randomly picks a value from a list of specified values."
+    >
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Thing Picker
@@ -74,7 +59,7 @@ const RandomThingPicker: NextPage = () => {
           </form>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

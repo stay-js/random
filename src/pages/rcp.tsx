@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 import { TbRefresh } from 'react-icons/tb';
+import Layout from '@layouts/Layout';
 
 const RandomColorPicker: NextPage = () => {
   const [rgb, setRgb] = useState<string | null>(null);
@@ -23,23 +23,11 @@ const RandomColorPicker: NextPage = () => {
   }, [randomColor]);
 
   return (
-    <>
-      <Head>
-        <title>RCP - Stay Random</title>
-        <meta property="og:title" content="RCP - Stay Random" key="title" />
-        <meta name="twitter:title" content="RCP- Stay Random" />
-
-        <meta name="description" content="Picks a random color and outputs HEX and RGB value." />
-        <meta
-          property="og:description"
-          content="Picks a random color and outputs HEX and RGB value."
-        />
-        <meta
-          name="twitter:description"
-          content="Picks a random color and outputs HEX and RGB value."
-        />
-      </Head>
-
+    <Layout
+      path="/rcp"
+      title="RCP - Stay Random"
+      desc="Picks a random color and outputs HEX and RGB value."
+    >
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Color Picker
@@ -63,7 +51,7 @@ const RandomColorPicker: NextPage = () => {
           </button>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { useRef, useState } from 'react';
+import Layout from '@layouts/Layout';
 
 export interface Props {
   min: string | undefined;
@@ -63,26 +63,11 @@ const RandomNumberGenerator: NextPage = () => {
   };
 
   return (
-    <>
-      <Head>
-        <title>RNG - Stay Random</title>
-        <meta property="og:title" content="RNG - Stay Random" key="title" />
-        <meta name="twitter:title" content="RNG- Stay Random" />
-
-        <meta
-          name="description"
-          content="Generates a random number between a specified min and max value."
-        />
-        <meta
-          property="og:description"
-          content="Generates a random number between a specified min and max value."
-        />
-        <meta
-          name="twitter:description"
-          content="Generates a random number between a specified min and max value."
-        />
-      </Head>
-
+    <Layout
+      path="/rng"
+      title="RNG - Stay Random"
+      desc="Generates a random number between a specified min and max value."
+    >
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Number Generator
@@ -141,7 +126,7 @@ const RandomNumberGenerator: NextPage = () => {
           </form>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import { Switch } from '@headlessui/react';
-import Head from 'next/head';
 import { useState, useEffect, useCallback } from 'react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
+import Layout from '@layouts/Layout';
 import copyToClipboard from '@utils/copyToClipboard';
 
 const Toggle: React.FC<{
@@ -63,17 +63,11 @@ const Password: NextPage = () => {
   }, [randomPassword]);
 
   return (
-    <>
-      <Head>
-        <title>Password - Stay Random</title>
-        <meta property="og:title" content="Password - Stay Random" key="title" />
-        <meta name="twitter:title" content="Password- Stay Random" />
-
-        <meta name="description" content="Generates a random secure password." />
-        <meta property="og:description" content="Generates a random secure password." />
-        <meta name="twitter:description" content="Generates a random secure password." />
-      </Head>
-
+    <Layout
+      path="/password"
+      title="Password - Stay Random"
+      desc="Generates a random secure password."
+    >
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Password Generator
@@ -129,7 +123,7 @@ const Password: NextPage = () => {
           </div>
         </section>
       </main>
-    </>
+    </Layout>
   );
 };
 

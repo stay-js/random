@@ -1,29 +1,14 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
+import Layout from '@layouts/Layout';
 import items from '@utils/items';
 
 const Home: NextPage = () => (
-  <>
-    <Head>
-      <title>Stay Random</title>
-      <meta property="og:title" content="Stay Random" key="title" />
-      <meta name="twitter:title" content="Stay Random" />
-
-      <meta
-        name="description"
-        content="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
-      />
-      <meta
-        property="og:description"
-        content="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
-      />
-      <meta
-        name="twitter:description"
-        content="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
-      />
-    </Head>
-
+  <Layout
+    path="/"
+    title="Home - Stay Random"
+    desc="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
+  >
     <main className="flex flex-col gap-8">
       <h1 className="text-5xl font-extrabold text-gray-300 md:text-7xl">
         Stay <span className="text-teal-400">Random</span>
@@ -48,7 +33,7 @@ const Home: NextPage = () => (
         ))}
       </div>
     </main>
-  </>
+  </Layout>
 );
 
 export default Home;
