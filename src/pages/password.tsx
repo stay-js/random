@@ -76,7 +76,7 @@ const Password: NextPage = () => {
 
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
-          Pasword Generator
+          Password Generator
         </h1>
 
         <section className="flex min-w-full flex-col gap-2 md:min-w-[55%]">

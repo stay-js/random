@@ -42,7 +42,7 @@ const items = [
     id: 'cl62jrrb5000009l7hkm83ewu',
   },
   {
-    name: 'Pasword Generator',
+    name: 'Password Generator',
     shortName: 'Password',
     path: '/password',
     desc: 'Generates a random secure password.',
