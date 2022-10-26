@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Layout from '@layouts/Layout';
 
 export interface Props {
@@ -11,6 +11,18 @@ export interface InputEvent {
   key: string;
   value: number;
 }
+
+const formatTime = (time: number | null): string => {
+  if (!time) return '00:00:00';
+
+  const hours = Math.floor(time / 3600);
+  const minutes = Math.floor((time / 60) % 60);
+  const seconds = time % 60;
+
+  return ` ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
+    seconds < 10 ? '0' : ''
+  }${seconds}`;
+};
 
 const validate = (values: Props): string[] => {
   const errors: string[] = [];
@@ -34,14 +46,25 @@ const validate = (values: Props): string[] => {
   if (Number(values.min) >= Number(values.max))
     errors.push('Max value must be greater than min value!');
 
+  if (Number(values.max) >= 10800)
+    errors.push('Max value must be less than 3 hours or 10800 seconds!');
+
   return errors;
 };
 
-const RandomNumberGenerator: NextPage = () => {
+const Countdown: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
-  const [number, setNumber] = useState<number | null>(null);
+  const [interval, setInterval] = useState<number | null>(null);
   const minRef = useRef<HTMLInputElement>(null);
   const maxRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (!interval || interval < 1) return;
+
+    const timer = setTimeout(() => setInterval(interval - 1), 1000);
+
+    return () => clearTimeout(timer);
+  }, [interval]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,31 +78,23 @@ const RandomNumberGenerator: NextPage = () => {
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      setNumber(
+      setInterval(
         Math.floor(Math.random() * (Number(values.max) - Number(values.min) + 1)) +
           Number(values.min),
       );
     }
   };
 
-  useEffect(() => {
-    setNumber(Math.floor(Math.random() * 11));
-  }, []);
-
   return (
-    <Layout
-      path="/rng"
-      title="RNG - Stay Random"
-      desc="Generates a random number between a specified min and max value."
-    >
+    <Layout path="/countdown" title="Countdown Timer - Stay Random" desc="">
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
-          Random Number Generator
+          Random Countdown Timer
         </h1>
 
         <section className="flex min-w-[20rem] flex-col gap-2">
-          <div className="text-2xl font-bold">
-            Number: <span className="text-teal-400">{number}</span>
+          <div className="flex flex-col items-center text-2xl font-bold">
+            <span className="text-teal-400">{formatTime(interval)}</span>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-4 sm:flex-row">
@@ -106,7 +121,7 @@ const RandomNumberGenerator: NextPage = () => {
                   type="number"
                   className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
                   id="max"
-                  defaultValue={10}
+                  defaultValue={60}
                   ref={maxRef}
                 />
               </div>
@@ -134,4 +149,4 @@ const RandomNumberGenerator: NextPage = () => {
   );
 };
 
-export default RandomNumberGenerator;
+export default Countdown;

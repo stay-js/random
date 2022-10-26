@@ -48,6 +48,13 @@ const items = [
     desc: 'Generates a random secure password.',
     id: 'cl8xf2mw500013b6mbgoxqo2y',
   },
+  {
+    name: 'Random Countdown Timer',
+    shortName: 'Countdown',
+    path: '/countdown',
+    desc: 'Generates a random interval and starts a countdown timer.',
+    id: 'cl9kfq18h00013b6muuk37y4j',
+  },
 ];
 
 export default items;
