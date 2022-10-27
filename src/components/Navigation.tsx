@@ -31,11 +31,8 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className="fixed top-0 z-10 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 shadow-sm">
-      <Link href="/">
-        <a className="group text-xl font-bold transition-colors hover:text-teal-400">
-          Stay{' '}
-          <span className="text-teal-400 transition-colors group-hover:text-white">Random</span>
-        </a>
+      <Link href="/" className="group text-xl font-bold transition-colors hover:text-teal-400">
+        Stay <span className="text-teal-400 transition-colors group-hover:text-white">Random</span>
       </Link>
 
       {!width || width < 1024 ? (
@@ -65,10 +62,12 @@ const Navigation: React.FC = () => {
           >
             {items.map(({ id, path, name }) => (
               <li key={id}>
-                <Link href={path}>
-                  <a className="transition-colors hover:text-teal-400" onClick={handleClose}>
-                    {name}
-                  </a>
+                <Link
+                  href={path}
+                  className="transition-colors hover:text-teal-400"
+                  onClick={handleClose}
+                >
+                  {name}
                 </Link>
               </li>
             ))}
@@ -78,10 +77,11 @@ const Navigation: React.FC = () => {
         <ul className="flex">
           {items.map(({ id, path, shortName }) => (
             <li key={id}>
-              <Link href={path}>
-                <a className="rounded-md px-3 py-2 transition-colors hover:bg-neutral-700">
-                  {shortName}
-                </a>
+              <Link
+                href={path}
+                className="rounded-md px-3 py-2 transition-colors hover:bg-neutral-700"
+              >
+                {shortName}
               </Link>
             </li>
           ))}

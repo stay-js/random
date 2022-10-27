@@ -24,10 +24,11 @@ const Home: NextPage = () => (
               <p className="text-sm text-gray-400">{desc}</p>
             </div>
 
-            <Link href={path}>
-              <a className="block text-teal-500 underline decoration-dotted underline-offset-2">
-                Continue to {shortName}
-              </a>
+            <Link
+              href={path}
+              className="block text-teal-500 underline decoration-dotted underline-offset-2"
+            >
+              Continue to {shortName}
             </Link>
           </div>
         ))}
