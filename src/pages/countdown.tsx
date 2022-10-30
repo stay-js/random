@@ -1,11 +1,7 @@
 import type { NextPage } from 'next';
 import { useRef, useState, useEffect } from 'react';
 import Layout from '@layouts/Layout';
-
-export interface Props {
-  min: string | undefined;
-  max: string | undefined;
-}
+import { validateCountdown as validate } from '@utils/validate';
 
 export interface InputEvent {
   key: string;
@@ -24,47 +20,19 @@ const formatTime = (time: number | null): string => {
   }${seconds}`;
 };
 
-const validate = (values: Props): string[] => {
-  const errors: string[] = [];
-
-  if (values.min === '' || values.min === undefined) errors.push('Please specify a min value!');
-  if (values.max === '' || values.max === undefined) errors.push('Please specify a max value!');
-
-  if (isNaN(Number(values.min))) errors.push('Min value must be a number!');
-  if (isNaN(Number(values.max))) errors.push('Max value must be a number!');
-
-  if (
-    values.min === '' ||
-    values.min === undefined ||
-    values.max === '' ||
-    values.max === undefined ||
-    isNaN(Number(values.min)) ||
-    isNaN(Number(values.max))
-  )
-    return errors;
-
-  if (Number(values.min) >= Number(values.max))
-    errors.push('Max value must be greater than min value!');
-
-  if (Number(values.max) >= 10800)
-    errors.push('Max value must be less than 3 hours or 10800 seconds!');
-
-  return errors;
-};
-
 const Countdown: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
-  const [interval, setInterval] = useState<number | null>(null);
+  const [time, setTime] = useState<number | null>(null);
   const minRef = useRef<HTMLInputElement>(null);
   const maxRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (!interval || interval < 1) return;
+    if (!time || time < 1) return;
 
-    const timer = setTimeout(() => setInterval(interval - 1), 1000);
+    const timer = setTimeout(() => setTime((value) => Number(value) - 1), 1000);
 
     return () => clearTimeout(timer);
-  }, [interval]);
+  }, [time]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -78,7 +46,7 @@ const Countdown: NextPage = () => {
     setErrors(newErrors);
 
     if (newErrors.length === 0) {
-      setInterval(
+      setTime(
         Math.floor(Math.random() * (Number(values.max) - Number(values.min) + 1)) +
           Number(values.min),
       );
@@ -94,7 +62,7 @@ const Countdown: NextPage = () => {
 
         <section className="flex min-w-[20rem] flex-col gap-2">
           <div className="flex flex-col items-center text-2xl font-bold">
-            <span className="text-teal-400">{formatTime(interval)}</span>
+            <span className="text-teal-400">{formatTime(time)}</span>
           </div>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-4 sm:flex-row">

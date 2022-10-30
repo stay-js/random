@@ -1,41 +1,7 @@
 import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 import Layout from '@layouts/Layout';
-
-export interface Props {
-  min: string | undefined;
-  max: string | undefined;
-}
-
-export interface InputEvent {
-  key: string;
-  value: number;
-}
-
-const validate = (values: Props): string[] => {
-  const errors: string[] = [];
-
-  if (values.min === '' || values.min === undefined) errors.push('Please specify a min value!');
-  if (values.max === '' || values.max === undefined) errors.push('Please specify a max value!');
-
-  if (isNaN(Number(values.min))) errors.push('Min value must be a number!');
-  if (isNaN(Number(values.max))) errors.push('Max value must be a number!');
-
-  if (
-    values.min === '' ||
-    values.min === undefined ||
-    values.max === '' ||
-    values.max === undefined ||
-    isNaN(Number(values.min)) ||
-    isNaN(Number(values.max))
-  )
-    return errors;
-
-  if (Number(values.min) >= Number(values.max))
-    errors.push('Max value must be greater than min value!');
-
-  return errors;
-};
+import { validateRNG as validate } from '@utils/validate';
 
 const RandomNumberGenerator: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
