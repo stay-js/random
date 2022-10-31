@@ -98,9 +98,11 @@ const Password: NextPage = () => {
 
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
-              Length: {passwordLength}
+              <label htmlFor="length">Length: {passwordLength}</label>
+
               <input
                 className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-700"
+                id="length"
                 type="range"
                 min="4"
                 max="64"
