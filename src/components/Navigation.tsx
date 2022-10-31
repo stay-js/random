@@ -62,6 +62,16 @@ const Navigation: React.FC = () => {
               isToggled ? 'left-0' : 'left-[-100%]'
             } fixed top-16 z-10 flex h-screen w-full flex-col gap-8 bg-neutral-900 p-8 transition-all duration-500 ease-in-out`}
           >
+            <li>
+              <Link
+                className="relative flex font-bold after:absolute after:-bottom-4 after:h-[1px] after:w-full after:bg-neutral-600"
+                onClick={handleClose}
+                href="/"
+              >
+                Home
+              </Link>
+            </li>
+
             {items.map(({ id, path, name }) => (
               <li key={id}>
                 <Link
@@ -77,6 +87,12 @@ const Navigation: React.FC = () => {
         </>
       ) : (
         <ul className="flex">
+          <li>
+            <Link href="/" className="rounded-md px-3 py-2 transition-colors hover:bg-neutral-700">
+              Home
+            </Link>
+          </li>
+
           {items.map(({ id, path, shortName }) => (
             <li key={id}>
               <Link
