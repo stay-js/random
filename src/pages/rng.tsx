@@ -47,6 +47,7 @@ const RandomNumberGenerator: NextPage = () => {
           <div className="text-2xl font-bold">
             Number: <span className="text-teal-400">{number}</span>
           </div>
+
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-4 sm:flex-row">
               <div className="flex w-full flex-col gap-1">

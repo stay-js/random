@@ -61,9 +61,10 @@ const Countdown: NextPage = () => {
         </h1>
 
         <section className="flex min-w-[20rem] flex-col gap-2">
-          <div className="flex flex-col items-center text-2xl font-bold">
-            <span className="text-teal-400">{formatTime(time)}</span>
+          <div className="flex flex-col items-center text-4xl font-bold text-teal-400">
+            {formatTime(time)}
           </div>
+
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
             <div className="flex flex-col gap-4 sm:flex-row">
               <div className="flex w-full flex-col gap-1">

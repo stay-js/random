@@ -13,6 +13,7 @@ const Home: NextPage = () => (
       <h1 className="text-5xl font-extrabold text-gray-300 md:text-7xl">
         Stay <span className="text-teal-400">Random</span>
       </h1>
+
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {items.map(({ name, shortName, desc, path, id }) => (
           <div

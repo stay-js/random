@@ -16,12 +16,12 @@ const IDPage: React.FC<{ name: string; generator: () => string }> = ({ generator
       </h1>
 
       <section className="flex min-w-full flex-col gap-2 md:min-w-[55%]">
-        <p
+        <div
           className="max-w-full border px-4 py-2 text-xl font-bold"
           style={{ overflowWrap: 'anywhere' }}
         >
           {value}
-        </p>
+        </div>
 
         <div className="flex items-center justify-between">
           <button
