@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 const Footer: React.FC = () => (
-  <footer className="min-h-20 flex flex-col items-center justify-between bg-neutral-900 p-6 text-white md:flex-row">
+  <footer className="flex flex-col items-center justify-between bg-neutral-900 p-6 text-white md:flex-row">
     <p>
       Made with &#10084;&#65039; by{' '}
       <Link href="https://znagy.hu/" target="_blank" className="link font-bold">
