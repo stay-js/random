@@ -39,7 +39,7 @@ const Navigation: React.FC = () => {
 
       {!width || width < 1024 ? (
         <>
-          <button type="button" className="h-6 w-6" onClick={handleToggle}>
+          <button className="h-6 w-6" title="Toggle Hamburger" type="button" onClick={handleToggle}>
             <span
               className={`${
                 isToggled ? 'rotate-45' : '-translate-y-2'
