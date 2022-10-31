@@ -13,10 +13,12 @@ const Navigation: React.FC = () => {
   };
 
   const handleToggle = () => {
-    setIsToggled(!isToggled);
+    setIsToggled((value) => {
+      if (value) disableScroll.off();
+      else disableScroll.on();
 
-    if (isToggled) disableScroll.off();
-    else disableScroll.on();
+      return !value;
+    });
   };
 
   const handleResize = () => setWidth(window.innerWidth);
@@ -30,7 +32,7 @@ const Navigation: React.FC = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 z-10 flex h-16 w-full select-none place-content-between items-center bg-neutral-900 px-6 shadow-sm">
+    <nav className="fixed top-0 z-10 flex h-16 w-full select-none items-center justify-between bg-neutral-900 px-6 shadow">
       <Link href="/" className="group text-xl font-bold transition-colors hover:text-teal-400">
         Stay <span className="text-teal-400 transition-colors group-hover:text-white">Random</span>
       </Link>
@@ -57,15 +59,15 @@ const Navigation: React.FC = () => {
 
           <ul
             className={`${
-              isToggled ? 'right-0' : 'right-[-100%]'
-            } fixed top-16 z-10 flex h-screen w-full select-none flex-col items-center gap-8 bg-neutral-800 pt-8 transition-all duration-500 ease-in-out`}
+              isToggled ? 'left-0' : 'left-[-100%]'
+            } fixed top-16 z-10 flex h-screen w-full flex-col gap-8 bg-neutral-900 py-8 px-8 transition-all duration-500 ease-in-out`}
           >
             {items.map(({ id, path, name }) => (
               <li key={id}>
                 <Link
-                  href={path}
-                  className="transition-colors hover:text-teal-400"
+                  className="relative flex font-bold after:absolute after:-bottom-4 after:h-[1px] after:w-full after:bg-neutral-600"
                   onClick={handleClose}
+                  href={path}
                 >
                   {name}
                 </Link>
