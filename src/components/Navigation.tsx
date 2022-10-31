@@ -60,7 +60,7 @@ const Navigation: React.FC = () => {
           <ul
             className={`${
               isToggled ? 'left-0' : 'left-[-100%]'
-            } fixed top-16 z-10 flex h-screen w-full flex-col gap-8 bg-neutral-900 px-8 py-4 transition-all duration-500 ease-in-out`}
+            } fixed top-16 z-10 flex h-screen w-full flex-col gap-8 bg-neutral-900 px-6 py-4 transition-all duration-500 ease-in-out`}
           >
             <li>
               <Link
