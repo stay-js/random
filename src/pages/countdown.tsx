@@ -61,7 +61,7 @@ const Countdown: NextPage = () => {
         </h1>
 
         <section className="flex min-w-[20rem] flex-col gap-2">
-          <div className="flex flex-col items-center text-4xl font-bold text-teal-400">
+          <div className="flex w-full flex-col items-center font-mono text-5xl font-bold text-teal-400">
             {formatTime(time)}
           </div>
 
