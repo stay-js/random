@@ -1,6 +1,6 @@
 interface Props {
-  min: string | undefined;
-  max: string | undefined;
+  min?: string;
+  max?: string;
 }
 
 export const validateRNG = (values: Props): string[] => {

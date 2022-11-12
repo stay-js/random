@@ -2,11 +2,6 @@ import type { NextPage } from 'next';
 import { useState, useRef } from 'react';
 import Layout from '@layouts/Layout';
 
-export interface InputEvent {
-  key: string;
-  value: string[];
-}
-
 const RandomThingPicker: NextPage = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState<string | null>(null);

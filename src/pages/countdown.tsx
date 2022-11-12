@@ -3,11 +3,6 @@ import { useRef, useState, useEffect } from 'react';
 import Layout from '@layouts/Layout';
 import { validateCountdown as validate } from '@utils/validate';
 
-export interface InputEvent {
-  key: string;
-  value: number;
-}
-
 const formatTime = (time: number | null): string => {
   if (!time) return '00:00:00';
 
