@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useState, useEffect, useCallback } from 'react';
 import { TbRefresh } from 'react-icons/tb';
-import Layout from '@layouts/Layout';
+import { Layout } from '@layouts/Layout';
 
 const RandomColorPicker: NextPage = () => {
   const [rgb, setRgb] = useState<string | null>(null);

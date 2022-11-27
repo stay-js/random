@@ -1,7 +1,8 @@
 import type { AppType } from 'next/dist/shared/lib/utils';
 import { Toaster } from 'react-hot-toast';
-import Footer from '@components/Footer';
-import Navigation from '@components/Navigation';
+import { Footer } from '@components/Footer';
+import { Navigation } from '@components/Navigation';
+
 import '@styles/globals.css';
 
 const App: AppType = ({ Component, pageProps }) => (

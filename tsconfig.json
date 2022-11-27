@@ -22,8 +22,8 @@
       "@components/*": ["src/components/*"],
       "@interfaces/*": ["src/types/interfaces/*"],
       "@layouts/*": ["src/layouts/*"],
+      "@pages/*": ["src/pages/*"],
       "@styles/*": ["src/styles/*"],
-      "@types/*": ["src/types/*"],
       "@utils/*": ["src/utils/*"]
     }
   },

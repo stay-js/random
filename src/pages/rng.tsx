@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
-import Layout from '@layouts/Layout';
+import { Layout } from '@layouts/Layout';
 import { validateRNG as validate } from '@utils/validate';
 
 const RandomNumberGenerator: NextPage = () => {

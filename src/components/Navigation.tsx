@@ -1,9 +1,9 @@
 import disableScroll from 'disable-scroll';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import items from '@utils/items';
+import { items } from '@utils/items';
 
-const Navigation: React.FC = () => {
+export const Navigation: React.FC = () => {
   const [width, setWidth] = useState<number | null>(null);
   const [isToggled, setIsToggled] = useState<boolean>(false);
 
@@ -108,5 +108,3 @@ const Navigation: React.FC = () => {
     </nav>
   );
 };
-
-export default Navigation;

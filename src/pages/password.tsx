@@ -2,8 +2,8 @@ import type { NextPage } from 'next';
 import { Switch } from '@headlessui/react';
 import { useState, useEffect, useCallback } from 'react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
-import Layout from '@layouts/Layout';
-import copyToClipboard from '@utils/copyToClipboard';
+import { Layout } from '@layouts/Layout';
+import { copyToClipboard } from '@utils/copyToClipboard';
 
 const Toggle: React.FC<{
   label: string;

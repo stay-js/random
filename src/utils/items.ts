@@ -1,4 +1,4 @@
-const items = [
+export const items = [
   {
     name: 'CUID',
     shortName: 'CUID',
@@ -56,5 +56,3 @@ const items = [
     id: 'cl9kfq18h00013b6muuk37y4j',
   },
 ];
-
-export default items;

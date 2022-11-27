@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import { useRef, useState, useEffect } from 'react';
-import Layout from '@layouts/Layout';
+import { Layout } from '@layouts/Layout';
 import { validateCountdown as validate } from '@utils/validate';
 
 const formatTime = (time: number | null): string => {
