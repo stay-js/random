@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
-import { Switch } from '@headlessui/react';
 import { useState, useEffect, useCallback } from 'react';
+import { Switch } from '@headlessui/react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
 import { Layout } from '@layouts/Layout';
 import { copyToClipboard } from '@utils/copyToClipboard';

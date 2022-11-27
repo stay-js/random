@@ -1,6 +1,6 @@
-import disableScroll from 'disable-scroll';
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import disableScroll from 'disable-scroll';
 import { items } from '@utils/items';
 
 export const Navigation: React.FC = () => {
