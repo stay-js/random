@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
 import { Layout } from '@layouts/Layout';
-import { validateRNG as validate } from '@utils/validate';
+import { validateMinMax as validate } from '@utils/validate';
 
 const RandomNumberGenerator: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
