@@ -9,8 +9,8 @@ export const validateMinMax = (values: Props): string[] => {
   if (values.min === '' || values.min === undefined) errors.push('Please specify a min value!');
   if (values.max === '' || values.max === undefined) errors.push('Please specify a max value!');
 
-  if (isNaN(Number(values.min))) errors.push('Min value must be a number!');
-  if (isNaN(Number(values.max))) errors.push('Max value must be a number!');
+  if (typeof values.min !== 'number') errors.push('Min value must be a number!');
+  if (typeof values.min !== 'number') errors.push('Max value must be a number!');
 
   if (errors.length !== 0) return errors;
 
