@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
-import { Layout } from './Layout';
+import { Meta } from '@components/Meta';
 import { copyToClipboard } from '@utils/copyToClipboard';
 
 export const IDPage: React.FC<{
@@ -17,7 +17,9 @@ export const IDPage: React.FC<{
   }, [generator]);
 
   return (
-    <Layout path={path} title={title} desc={desc}>
+    <>
+      <Meta path={path} title={title} desc={desc} />
+
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random <span className="text-teal-400">{name}</span>
@@ -51,6 +53,6 @@ export const IDPage: React.FC<{
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 };

@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { useState, useEffect, useCallback } from 'react';
 import { Switch } from '@headlessui/react';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
-import { Layout } from '@layouts/Layout';
+import { Meta } from '@components/Meta';
 import { copyToClipboard } from '@utils/copyToClipboard';
 
 const Toggle: React.FC<{
@@ -30,7 +30,7 @@ const Toggle: React.FC<{
   </Switch.Group>
 );
 
-const Password: NextPage = () => {
+const Page: NextPage = () => {
   const numbers = '0123456789';
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz';
   const upperCaseLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -63,11 +63,13 @@ const Password: NextPage = () => {
   }, [randomPassword]);
 
   return (
-    <Layout
-      path="/password"
-      title="Password - Stay Random"
-      desc="Generates a random secure password."
-    >
+    <>
+      <Meta
+        path="/password"
+        title="Password - Stay Random"
+        desc="Generates a random secure password."
+      />
+
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Password Generator
@@ -125,8 +127,8 @@ const Password: NextPage = () => {
           </div>
         </section>
       </main>
-    </Layout>
+    </>
   );
 };
 
-export default Password;
+export default Page;

@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import { useEffect, useRef, useState } from 'react';
-import { Layout } from '@layouts/Layout';
+import { Meta } from '@components/Meta';
 import { validateMinMax as validate } from '@utils/validate';
 
-const RandomNumberGenerator: NextPage = () => {
+const Page: NextPage = () => {
   const [errors, setErrors] = useState<string[]>([]);
   const [number, setNumber] = useState<number | null>(null);
   const minRef = useRef<HTMLInputElement>(null);
@@ -33,11 +33,13 @@ const RandomNumberGenerator: NextPage = () => {
   }, []);
 
   return (
-    <Layout
-      path="/rng"
-      title="RNG - Stay Random"
-      desc="Generates a random number between a specified min and max value."
-    >
+    <>
+      <Meta
+        path="/rng"
+        title="RNG - Stay Random"
+        desc="Generates a random number between a specified min and max value."
+      />
+
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Number Generator
@@ -97,8 +99,8 @@ const RandomNumberGenerator: NextPage = () => {
           </form>
         </section>
       </main>
-    </Layout>
+    </>
   );
 };
 
-export default RandomNumberGenerator;
+export default Page;

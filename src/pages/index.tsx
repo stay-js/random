@@ -1,14 +1,16 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { Layout } from '@layouts/Layout';
+import { Meta } from '@components/Meta';
 import { items } from '@constants/items';
 
-const Home: NextPage = () => (
-  <Layout
-    path="/"
-    title="Home - Stay Random"
-    desc="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
-  >
+const Page: NextPage = () => (
+  <>
+    <Meta
+      path="/"
+      title="Home - Stay Random"
+      desc="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
+    />
+
     <main className="flex flex-col gap-8">
       <h1 className="text-5xl font-extrabold text-gray-300 md:text-7xl">
         Stay <span className="text-teal-400">Random</span>
@@ -35,7 +37,7 @@ const Home: NextPage = () => (
         ))}
       </div>
     </main>
-  </Layout>
+  </>
 );
 
-export default Home;
+export default Page;

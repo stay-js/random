@@ -1,9 +1,9 @@
 import type { NextPage } from 'next';
 import { useState, useEffect, useCallback } from 'react';
 import { TbRefresh } from 'react-icons/tb';
-import { Layout } from '@layouts/Layout';
+import { Meta } from '@components/Meta';
 
-const RandomColorPicker: NextPage = () => {
+const Page: NextPage = () => {
   const [rgb, setRgb] = useState<string | null>(null);
   const [hex, setHex] = useState<string | null>(null);
 
@@ -23,11 +23,13 @@ const RandomColorPicker: NextPage = () => {
   }, [randomColor]);
 
   return (
-    <Layout
-      path="/rcp"
-      title="RCP - Stay Random"
-      desc="Picks a random color and outputs HEX and RGB value."
-    >
+    <>
+      <Meta
+        path="/rcp"
+        title="RCP - Stay Random"
+        desc="Picks a random color and outputs HEX and RGB value."
+      />
+
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Color Picker
@@ -51,8 +53,8 @@ const RandomColorPicker: NextPage = () => {
           </button>
         </section>
       </main>
-    </Layout>
+    </>
   );
 };
 
-export default RandomColorPicker;
+export default Page;

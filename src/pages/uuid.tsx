@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { v4 } from 'uuid';
 import { IDPage } from '@layouts/IDPage';
 
-const UUID: NextPage = () => (
+const Page: NextPage = () => (
   <IDPage
     path="/uuid"
     title="UUID - Stay Random"
@@ -12,4 +12,4 @@ const UUID: NextPage = () => (
   />
 );
 
-export default UUID;
+export default Page;

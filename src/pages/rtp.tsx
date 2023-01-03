@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import { useState, useRef } from 'react';
-import { Layout } from '@layouts/Layout';
+import { Meta } from '@components/Meta';
 
-const RandomThingPicker: NextPage = () => {
+const Page: NextPage = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState<string | null>(null);
 
@@ -16,11 +16,13 @@ const RandomThingPicker: NextPage = () => {
   };
 
   return (
-    <Layout
-      path="/rtp"
-      title="RTP - Stay Random"
-      desc="Randomly picks a value from a list of specified values."
-    >
+    <>
+      <Meta
+        path="/rtp"
+        title="RTP - Stay Random"
+        desc="Randomly picks a value from a list of specified values."
+      />
+
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
           Random Thing Picker
@@ -54,8 +56,8 @@ const RandomThingPicker: NextPage = () => {
           </form>
         </section>
       </main>
-    </Layout>
+    </>
   );
 };
 
-export default RandomThingPicker;
+export default Page;

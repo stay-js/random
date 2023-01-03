@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import guid from 'guid';
 import { IDPage } from '@layouts/IDPage';
 
-const GUID: NextPage = () => (
+const Page: NextPage = () => (
   <IDPage
     path="/guid"
     title="GUID - Stay Random"
@@ -12,4 +12,4 @@ const GUID: NextPage = () => (
   />
 );
 
-export default GUID;
+export default Page;
