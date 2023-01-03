@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import disableScroll from 'disable-scroll';
-import { items } from '@utils/items';
+import { items } from '@constants/items';
 
 export const Navigation: React.FC = () => {
   const [isToggled, setIsToggled] = useState<boolean>(false);

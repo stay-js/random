@@ -55,4 +55,4 @@ export const items = [
     desc: 'Generates a random interval and starts a countdown timer.',
     id: 'cl9kfq18h00013b6muuk37y4j',
   },
-];
+] as const;

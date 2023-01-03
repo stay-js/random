@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Layout } from '@layouts/Layout';
-import { items } from '@utils/items';
+import { items } from '@constants/items';
 
 const Home: NextPage = () => (
   <Layout
