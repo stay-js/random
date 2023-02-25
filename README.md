@@ -1,6 +1,6 @@
-# Random Generator App
+# Stay Random
 
-Random Generator App, built with [t3-stack](https://create.t3.gg).
+Stay Random a random generator app, built with [t3-stack](https://create.t3.gg).
 
 - **Deployment**: [Vercel](https://vercel.com)
 - [Next.js](https://nextjs.org)

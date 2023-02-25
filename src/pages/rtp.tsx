@@ -12,7 +12,7 @@ const Page: NextPage = () => {
     const values = ref.current?.value.split('\n');
     if (!values || values.length === 0) return;
 
-    setValue(values[Math.floor(Math.random() * values.length)]);
+    setValue(values[Math.floor(Math.random() * values.length)] as string);
   };
 
   return (
