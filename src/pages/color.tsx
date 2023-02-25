@@ -27,31 +27,33 @@ const Page: NextPage = () => {
       <Meta
         path="/rcp"
         title="RCP - Stay Random"
-        desc="Picks a random color and outputs HEX and RGB value."
+        desc="Generates a random color and outputs HEX and RGB value."
       />
 
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">
-          Random Color Picker
+          Random Color Generator
         </h1>
 
-        <section className="flex min-w-[20rem] flex-col gap-2">
-          <div className="text-2xl font-bold">
-            <p>
-              HEX: <span style={{ color: rgb! }}>{hex}</span>
-            </p>
-            <p>
-              RGB: <span style={{ color: rgb! }}>{rgb}</span>
-            </p>
-          </div>
+        {rgb && (
+          <section className="flex min-w-[20rem] flex-col gap-2">
+            <div className="text-2xl font-bold">
+              <p>
+                HEX: <span style={{ color: rgb }}>{hex}</span>
+              </p>
+              <p>
+                RGB: <span style={{ color: rgb }}>{rgb}</span>
+              </p>
+            </div>
 
-          <div className="h-48 w-full rounded" style={{ backgroundColor: rgb! }} />
+            <div className="h-48 w-full rounded" style={{ backgroundColor: rgb }} />
 
-          <button type="button" className="flex items-center gap-1" onClick={randomColor}>
-            <TbRefresh size={18} />
-            Pick a random color
-          </button>
-        </section>
+            <button type="button" className="flex items-center gap-1" onClick={randomColor}>
+              <TbRefresh size={18} />
+              Generate a random color
+            </button>
+          </section>
+        )}
       </main>
     </>
   );

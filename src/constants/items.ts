@@ -35,10 +35,10 @@ export const items = [
     id: 'cl62c4a11000909l2csap40kz',
   },
   {
-    name: 'Random Color Picker',
-    shortName: 'RCP',
-    path: '/rcp',
-    desc: 'Picks a random color and outputs HEX and RGB value.',
+    name: 'Random Color Generator',
+    shortName: 'Color',
+    path: '/color',
+    desc: 'Generates a random color and outputs HEX and RGB value.',
     id: 'cl62jrrb5000009l7hkm83ewu',
   },
   {

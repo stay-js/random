@@ -9,6 +9,10 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://random.znagy.hu/color</loc>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://random.znagy.hu/cuid</loc>
   <priority>0.80</priority>
 </url>
@@ -26,10 +30,6 @@
 </url>
 <url>
   <loc>https://random.znagy.hu/rtp</loc>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://random.znagy.hu/rcp</loc>
   <priority>0.80</priority>
 </url>
 <url>
