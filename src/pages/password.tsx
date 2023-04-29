@@ -91,7 +91,7 @@ const Page: NextPage = () => {
             <button
               type="button"
               className="flex items-center gap-1"
-              onClick={() => copyToClipboard(password)}
+              onClick={() => void copyToClipboard(password)}
             >
               <TbCopy size={18} />
               Copy
