@@ -7,13 +7,14 @@ export const Meta: React.FC<{
 }> = ({ path, title, desc }) => (
   <Head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
     <link rel="icon" href="/favicon.ico" />
 
-    <meta name="author" content="stay" />
+    <meta name="author" content="Zétény Nagy" />
     <meta
       name="keywords"
-      content="stay, random, stay random, CUID, collision resistant unique identifier, GUID, globally unique identifier,
-        UUID, universally unique identifier, RNG, random number generator, RTP, random thing picker, RCP, random color picker"
+      content="stay, random, cuid, collision resistant unique identifier, guid, globally unique identifier, uuid, universally unique identifier, rng, random number generator, rtp, random thing picker, rcg, random color generator, random countdown, random password generator, password, password generator"
     />
 
     <meta property="og:locale" content="en_US" />

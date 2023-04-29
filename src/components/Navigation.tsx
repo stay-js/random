@@ -39,7 +39,7 @@ export const Navigation: React.FC = () => {
         />
         <span
           className={`${
-            isToggled && 'opacity-0'
+            isToggled ? 'opacity-0' : ''
           } absolute block h-0.5 w-4 bg-current transition-all duration-500`}
         />
         <span

@@ -1,7 +1,7 @@
 {
   "name": "random",
   "version": "1.0.0",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -9,32 +9,35 @@
     "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.7.13",
+    "@headlessui/react": "^1.7.14",
+    "@vercel/analytics": "^1.0.0",
     "cuid": "^3.0.0",
     "disable-scroll": "^0.6.0",
     "guid": "^0.0.12",
-    "next": "13.3.0",
+    "next": "13.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hot-toast": "^2.4.0",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "@types/eslint": "^8.37.0",
     "@types/guid": "^1.0.0",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.33",
-    "@types/react-dom": "18.0.11",
+    "@types/node": "18.16.3",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.1",
     "@types/uuid": "^9.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.57.1",
-    "@typescript-eslint/parser": "^5.57.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
     "autoprefixer": "^10.4.14",
-    "eslint": "^8.37.0",
-    "eslint-config-next": "^13.3.0",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.7",
-    "tailwindcss": "^3.3.1",
-    "typescript": "^5.0.3"
+    "eslint": "^8.39.0",
+    "eslint-config-next": "^13.3.1",
+    "postcss": "^8.4.23",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.2.8",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4"
   }
 }
