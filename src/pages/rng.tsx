@@ -37,7 +37,7 @@ const Page: NextPage = () => {
       <Meta
         path="/rng"
         title="RNG - Stay Random"
-        desc="Generates a random number between a specified min and max value."
+        description="Generates a random number between a specified min and max value."
       />
 
       <main className="flex flex-col gap-12">

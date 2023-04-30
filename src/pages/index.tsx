@@ -8,7 +8,7 @@ const Page: NextPage = () => (
     <Meta
       path="/"
       title="Home - Stay Random"
-      desc="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
+      description="CUID, GUID, UUID, Random Number Generator, Random Thing Picker, Random Color Picker, etc."
     />
 
     <main className="flex flex-col gap-8">

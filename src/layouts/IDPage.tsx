@@ -18,7 +18,7 @@ export const IDPage: React.FC<{
 
   return (
     <>
-      <Meta path={path} title={title} desc={desc} />
+      <Meta path={path} title={title} description={desc} />
 
       <main className="flex flex-col gap-12">
         <h1 className="text-center text-5xl font-extrabold text-gray-300 md:text-7xl">

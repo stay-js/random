@@ -20,7 +20,7 @@ const Page: NextPage = () => {
       <Meta
         path="/rtp"
         title="RTP - Stay Random"
-        desc="Randomly picks a value from a list of specified values."
+        description="Randomly picks a value from a list of specified values."
       />
 
       <main className="flex flex-col gap-12">

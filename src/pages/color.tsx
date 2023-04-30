@@ -27,7 +27,7 @@ const Page: NextPage = () => {
       <Meta
         path="/rcp"
         title="RCP - Stay Random"
-        desc="Generates a random color and outputs HEX and RGB value."
+        description="Generates a random color and outputs HEX and RGB value."
       />
 
       <main className="flex flex-col gap-12">

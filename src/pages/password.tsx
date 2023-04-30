@@ -67,7 +67,7 @@ const Page: NextPage = () => {
       <Meta
         path="/password"
         title="Password - Stay Random"
-        desc="Generates a random secure password."
+        description="Generates a random secure password."
       />
 
       <main className="flex flex-col gap-12">

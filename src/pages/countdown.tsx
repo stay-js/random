@@ -53,7 +53,7 @@ const Page: NextPage = () => {
       <Meta
         path="/countdown"
         title="Countdown Timer - Stay Random"
-        desc="Generates a random interval and starts a countdown timer."
+        description="Generates a random interval and starts a countdown timer."
       />
 
       <main className="flex flex-col gap-12">
