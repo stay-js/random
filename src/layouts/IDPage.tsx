@@ -45,7 +45,7 @@ export const IDPage: React.FC<{
             <button
               type="button"
               className="flex items-center gap-1"
-              onClick={() => void copyToClipboard(value)}
+              onClick={() => copyToClipboard(value)}
             >
               <TbCopy size={18} />
               Copy
