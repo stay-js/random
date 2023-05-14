@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const routes = ['', '/color', '/countdown', '/cuid', '/guid', '/password', '/rng', '/rtp', '/uuid'];
+const routes = ['', '/countdown', '/cuid', '/guid', '/number', '/password', '/thing', '/uuid'];
 
 const sitemap = (): MetadataRoute.Sitemap => {
   return routes.map((route) => ({
