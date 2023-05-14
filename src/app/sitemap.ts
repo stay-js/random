@@ -1,9 +1,8 @@
 import type { MetadataRoute } from 'next';
-
-const routes = ['', '/countdown', '/cuid', '/guid', '/number', '/password', '/thing', '/uuid'];
+import { items } from '@constants/items';
 
 const sitemap = (): MetadataRoute.Sitemap => {
-  return routes.map((route) => ({
+  return ['', ...items.map((item) => item.path)].map((route) => ({
     url: `https://znagy.hu${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }));

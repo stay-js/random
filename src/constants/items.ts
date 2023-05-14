@@ -24,14 +24,14 @@ export const items = [
   },
   {
     title: 'Random Number Generator',
-    shortTitle: 'RNG',
+    shortTitle: 'Number',
     path: '/number',
     description: 'Generates a random number between a specified min and max value.',
     id: 'cl62c40sr000809l2emoiaa0q',
   },
   {
     title: 'Random Thing Picker',
-    shortTitle: 'RTP',
+    shortTitle: 'Thing',
     path: '/thing',
     description: 'Randomly picks a value from a list of specified values.',
     id: 'cl62c4a11000909l2csap40kz',
