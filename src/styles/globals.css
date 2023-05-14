@@ -6,18 +6,6 @@
   color-scheme: dark;
 }
 
-html {
-  @apply antialiased;
-}
-
-body {
-  @apply overflow-x-hidden bg-neutral-800 text-white;
-}
-
 main {
-  @apply container mx-auto mt-28 mb-8 flex flex-col items-center p-4;
-}
-
-.link {
-  @apply bg-gradient-to-r from-teal-400 to-teal-700 bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-all duration-200 hover:bg-[length:100%_2px];
+  @apply container mx-auto mb-8 mt-28 flex flex-col items-center p-4;
 }

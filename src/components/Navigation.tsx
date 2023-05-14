@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import disableScroll from 'disable-scroll';
@@ -64,15 +66,16 @@ export const Navigation: React.FC = () => {
               Home
             </Link>
           </li>
-          {items.map(({ id, path, name, shortName }) => (
+
+          {items.map(({ id, path, title, shortTitle }) => (
             <li key={id}>
               <Link
                 className="relative flex font-bold text-white transition-colors after:absolute after:-bottom-4 after:h-px after:w-full after:bg-neutral-600 lg:static lg:block lg:rounded-md lg:px-3 lg:py-2 lg:font-normal lg:after:hidden lg:hover:bg-neutral-800"
                 onClick={handleClose}
                 href={path}
               >
-                <span className="lg:hidden">{name}</span>
-                <span className="hidden lg:block">{shortName}</span>
+                <span className="lg:hidden">{title}</span>
+                <span className="hidden lg:block">{shortTitle}</span>
               </Link>
             </li>
           ))}
