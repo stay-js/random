@@ -7,10 +7,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { minMaxSchema } from '@app/number/RandomNumberGenerator';
 
-const countdownSchema = minMaxSchema.refine(
-  (data) => Number(data.max) < 10800,
-  'Max value must be less than 3 hours or 10800 seconds!',
-);
+const DAY_IN_SECONDS = 24 * 60 * 60;
+
+const countdownSchema = minMaxSchema.refine((data) => Number(data.max) < DAY_IN_SECONDS, {
+  message: `Max value must be less than 24 hours or ${DAY_IN_SECONDS} seconds!`,
+});
 
 type CountdownSchema = z.infer<typeof countdownSchema>;
 
@@ -26,7 +27,7 @@ const formatTime = (time: number | null): string => {
   const minutes = Math.floor((time / 60) % 60);
   const seconds = time % 60;
 
-  return ` ${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
+  return `${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${
     seconds < 10 ? '0' : ''
   }${seconds}`;
 };
