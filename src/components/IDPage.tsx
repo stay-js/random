@@ -10,9 +10,7 @@ export const IDPage: React.FC<{
 }> = ({ generator, name }) => {
   const [value, setValue] = useState<string | null>(null);
 
-  useEffect(() => {
-    setValue(generator());
-  }, [generator]);
+  useEffect(() => setValue(generator()), [generator]);
 
   if (!value) return null;
 

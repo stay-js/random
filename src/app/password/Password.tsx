@@ -57,9 +57,7 @@ export const Password: React.FC = () => {
     );
   }, [passwordLength, useNumbers, useUpperCaseLetters, useSpecialCharacters]);
 
-  useEffect(() => {
-    randomPassword();
-  }, [randomPassword]);
+  useEffect(() => randomPassword(), [randomPassword]);
 
   if (!password) return null;
 

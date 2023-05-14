@@ -48,9 +48,7 @@ export const RandomNumberGenerator: React.FC = () => {
     );
   };
 
-  useEffect(() => {
-    setNumber(Math.floor(Math.random() * 11));
-  }, []);
+  useEffect(() => setNumber(Math.floor(Math.random() * 11)), []);
 
   return (
     <section className="flex min-w-[20rem] flex-col gap-2">

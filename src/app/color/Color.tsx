@@ -18,9 +18,7 @@ export const Color: React.FC = () => {
     setHex(`#${newRgb.r.toString(16)}${newRgb.g.toString(16)}${newRgb.b.toString(16)}`);
   }, []);
 
-  useEffect(() => {
-    randomColor();
-  }, [randomColor]);
+  useEffect(() => randomColor(), [randomColor]);
 
   if (!rgb || !hex) return null;
 
