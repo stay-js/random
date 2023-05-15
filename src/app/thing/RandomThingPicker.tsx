@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react';
 import { Textarea } from '@components/Input';
+import { Button } from '@components/Button';
 
 export const RandomThingPicker: React.FC = () => {
   const [value, setValue] = useState<string | null | undefined>(null);
@@ -31,12 +32,7 @@ export const RandomThingPicker: React.FC = () => {
           ref={ref}
         />
 
-        <button
-          type="submit"
-          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
-        >
-          Pick
-        </button>
+        <Button type="submit">Pick</Button>
       </form>
     </section>
   );

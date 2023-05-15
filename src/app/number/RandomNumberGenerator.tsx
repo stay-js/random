@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { TextInput } from '@components/Input';
+import { Button } from '@components/Button';
 
 // I know I could use z.coerce.number() but then an empty string would be converted to 0 and no error message would be shown.
 
@@ -52,7 +53,7 @@ export const RandomNumberGenerator: React.FC = () => {
   useEffect(() => setNumber(Math.floor(Math.random() * 11)), []);
 
   return (
-    <section className="w-ful flex max-w-sm flex-col gap-2">
+    <section className="flex w-full max-w-sm flex-col gap-2">
       <div className="text-2xl font-bold">
         Number: <span className="text-teal-400">{number}</span>
       </div>
@@ -73,12 +74,7 @@ export const RandomNumberGenerator: React.FC = () => {
           </ul>
         )}
 
-        <button
-          type="submit"
-          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
-        >
-          Generate
-        </button>
+        <Button type="submit">Generate</Button>
       </form>
     </section>
   );

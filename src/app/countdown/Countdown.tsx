@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { minMaxSchema } from '@app/number/RandomNumberGenerator';
 import { TextInput } from '@components/Input';
+import { Button } from '@components/Button';
 
 const DAY_IN_SECONDS = 24 * 60 * 60;
 
@@ -78,12 +79,7 @@ export const Countdown: React.FC = () => {
           </ul>
         )}
 
-        <button
-          type="submit"
-          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
-        >
-          Generate
-        </button>
+        <Button type="submit">Generate</Button>
       </form>
     </section>
   );

@@ -9,7 +9,7 @@ export const Textarea: React.FC<{
   const id = useId();
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex w-full flex-col gap-1">
       {label && (
         <label htmlFor={id} className="w-fit font-medium text-neutral-300">
           {label}
