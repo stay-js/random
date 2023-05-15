@@ -12,12 +12,12 @@ export const metadata = createMetadata({
 });
 
 const Page: NextPage = () => (
-  <main className="flex flex-col gap-8">
+  <main>
     <Title>
       Stay <Title.Highlight>Random</Title.Highlight>
     </Title>
 
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {items.map(({ title, shortTitle, description, path, id }) => (
         <div className="flex max-w-sm flex-col gap-4 rounded border-2 border-gray-500 p-6" key={id}>
           <div className="flex flex-col gap-1">
@@ -27,13 +27,13 @@ const Page: NextPage = () => (
 
           <Link
             href={path}
-            className="block text-teal-500 underline decoration-dotted underline-offset-2"
+            className="text-teal-500 underline decoration-dotted underline-offset-2"
           >
             Continue to {shortTitle}
           </Link>
         </div>
       ))}
-    </div>
+    </section>
   </main>
 );
 

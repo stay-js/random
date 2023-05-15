@@ -6,7 +6,7 @@ import { createItemMetadataByPath } from '@utils/createMetadata';
 export const metadata = createItemMetadataByPath('/password');
 
 const Page: NextPage = () => (
-  <main className="flex flex-col gap-12">
+  <main>
     <Title>
       <Title.Highlight>Password</Title.Highlight> Generator
     </Title>

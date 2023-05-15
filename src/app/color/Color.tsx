@@ -33,7 +33,7 @@ export const Color: React.FC = () => {
         </p>
       </div>
 
-      <div className="h-48 w-full rounded" style={{ backgroundColor: rgb }} />
+      <div className="h-48 rounded" style={{ backgroundColor: rgb }} />
 
       <button type="button" className="flex items-center gap-1" onClick={randomColor}>
         <TbRefresh size={18} />

@@ -7,5 +7,5 @@
 }
 
 main {
-  @apply container mx-auto mb-8 mt-28 flex flex-col items-center p-4;
+  @apply container mx-auto flex flex-col items-center gap-12 px-4 pb-24 pt-4;
 }

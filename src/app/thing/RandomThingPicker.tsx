@@ -29,7 +29,7 @@ export const RandomThingPicker: React.FC = () => {
           </label>
 
           <textarea
-            className="w-full resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
+            className="resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
             id="values"
             rows={10}
             placeholder="Separate values with a newline."
@@ -39,7 +39,7 @@ export const RandomThingPicker: React.FC = () => {
 
         <button
           type="submit"
-          className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
+          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
         >
           Pick
         </button>

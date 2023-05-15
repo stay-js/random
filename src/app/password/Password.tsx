@@ -63,10 +63,7 @@ export const Password: React.FC = () => {
 
   return (
     <section className="flex w-full max-w-3xl flex-col gap-2">
-      <div
-        className="max-w-full border px-4 py-2 text-xl font-bold"
-        style={{ overflowWrap: 'anywhere' }}
-      >
+      <div className="border px-4 py-2 text-xl font-bold" style={{ overflowWrap: 'anywhere' }}>
         {password}
       </div>
 
@@ -90,7 +87,7 @@ export const Password: React.FC = () => {
           <label htmlFor="length">Length: {passwordLength}</label>
 
           <input
-            className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-neutral-700"
+            className="h-2 cursor-pointer appearance-none rounded-lg bg-neutral-700"
             id="length"
             type="range"
             min="4"

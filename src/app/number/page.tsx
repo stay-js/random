@@ -6,7 +6,7 @@ import { createItemMetadataByPath } from '@utils/createMetadata';
 export const metadata = createItemMetadataByPath('/number');
 
 const Page: NextPage = () => (
-  <main className="flex flex-col gap-12">
+  <main>
     <Title>
       Random <Title.Highlight>Number Generator</Title.Highlight>
     </Title>

@@ -51,7 +51,7 @@ export const RandomNumberGenerator: React.FC = () => {
   useEffect(() => setNumber(Math.floor(Math.random() * 11)), []);
 
   return (
-    <section className="flex w-full max-w-sm flex-col gap-2">
+    <section className="w-ful flex max-w-sm flex-col gap-2">
       <div className="text-2xl font-bold">
         Number: <span className="text-teal-400">{number}</span>
       </div>
@@ -65,7 +65,7 @@ export const RandomNumberGenerator: React.FC = () => {
 
             <input
               type="number"
-              className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
               {...register('min')}
             />
           </div>
@@ -77,7 +77,7 @@ export const RandomNumberGenerator: React.FC = () => {
 
             <input
               type="number"
-              className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
               {...register('max')}
             />
           </div>
@@ -95,7 +95,7 @@ export const RandomNumberGenerator: React.FC = () => {
 
         <button
           type="submit"
-          className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
+          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
         >
           Generate
         </button>

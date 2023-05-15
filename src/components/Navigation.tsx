@@ -23,7 +23,7 @@ export const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed top-0 z-10 flex h-16 w-full select-none items-center justify-between bg-neutral-900 px-6 shadow">
+    <nav className="sticky top-0 z-10 flex h-16 select-none items-center justify-between bg-neutral-900 px-6 shadow">
       <Link href="/" className="group text-xl font-bold transition-colors hover:text-teal-400">
         Stay <span className="text-teal-400 transition-colors group-hover:text-white">Random</span>
       </Link>

@@ -57,7 +57,7 @@ export const Countdown: React.FC = () => {
 
   return (
     <section className="flex w-full max-w-sm flex-col gap-2">
-      <div className="flex w-full flex-col items-center font-mono text-5xl font-bold text-teal-400">
+      <div className="text-center font-mono text-5xl font-bold text-teal-400">
         {formatTime(time)}
       </div>
 
@@ -70,7 +70,7 @@ export const Countdown: React.FC = () => {
 
             <input
               type="number"
-              className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
               {...register('min')}
             />
           </div>
@@ -82,7 +82,7 @@ export const Countdown: React.FC = () => {
 
             <input
               type="number"
-              className="h-10 w-full rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
               {...register('max')}
             />
           </div>
@@ -100,7 +100,7 @@ export const Countdown: React.FC = () => {
 
         <button
           type="submit"
-          className="h-10 w-full cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
+          className="h-10 cursor-pointer rounded bg-teal-400 text-base text-white transition-colors hover:bg-gray-600"
         >
           Generate
         </button>

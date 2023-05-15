@@ -6,7 +6,7 @@ import { createItemMetadataByPath } from '@utils/createMetadata';
 export const metadata = createItemMetadataByPath('/thing');
 
 const Page: NextPage = () => (
-  <main className="flex flex-col gap-12">
+  <main>
     <Title>
       Random <Title.Highlight>Thing Picker</Title.Highlight>
     </Title>
