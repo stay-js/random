@@ -1,10 +1,9 @@
-import type { Ref } from 'react';
 import { forwardRef, useId } from 'react';
 
 export const TextInput: React.FC<{
   label?: string;
   placeholder?: string;
-  ref?: Ref<HTMLInputElement>;
+  ref?: React.Ref<HTMLInputElement>;
 }> = forwardRef(({ label, placeholder, ...props }, ref) => {
   const id = useId();
 

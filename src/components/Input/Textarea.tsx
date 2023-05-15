@@ -1,11 +1,10 @@
-import type { Ref } from 'react';
 import { forwardRef, useId } from 'react';
 
 export const Textarea: React.FC<{
   label?: string;
   placeholder?: string;
   rows?: number;
-  ref?: Ref<HTMLTextAreaElement>;
+  ref?: React.Ref<HTMLTextAreaElement>;
 }> = forwardRef(({ label, placeholder, rows, ...props }, ref) => {
   const id = useId();
 
