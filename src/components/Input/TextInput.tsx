@@ -16,7 +16,7 @@ export const TextInput: React.FC<{
       )}
 
       <input
-        className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
+        className="h-10 rounded border border-[#373A40] bg-[#25262b] px-3 text-sm text-neutral-400"
         type="text"
         id={id}
         placeholder={placeholder}
