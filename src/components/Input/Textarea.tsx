@@ -4,7 +4,7 @@ import { forwardRef, useId } from 'react';
 export const Textarea: React.FC<{
   label?: string;
   placeholder?: string;
-  rows: number;
+  rows?: number;
   ref?: Ref<HTMLTextAreaElement>;
 }> = forwardRef(({ label, placeholder, rows, ...props }, ref) => {
   const id = useId();
