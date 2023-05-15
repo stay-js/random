@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { TbRefresh } from 'react-icons/tb';
+import { RefreshButton } from '@components/Button';
 
 export const Color: React.FC = () => {
   const [rgb, setRgb] = useState<string | null>(null);
@@ -35,10 +35,7 @@ export const Color: React.FC = () => {
 
       <div className="h-48 rounded" style={{ backgroundColor: rgb }} />
 
-      <button type="button" className="flex items-center gap-1" onClick={randomColor}>
-        <TbRefresh size={18} />
-        Generate a random color
-      </button>
+      <RefreshButton onClick={randomColor}>Generate a random color</RefreshButton>
     </section>
   );
 };

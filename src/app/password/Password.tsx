@@ -2,8 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { Switch } from '@headlessui/react';
-import { TbCopy, TbRefresh } from 'react-icons/tb';
-import { copyToClipboard } from '@utils/copyToClipboard';
+import { CopyButton, RefreshButton } from '@components/Button';
 
 const Toggle: React.FC<{
   label: string;
@@ -68,18 +67,8 @@ export const Password: React.FC = () => {
       </div>
 
       <div className="flex items-center justify-between">
-        <button type="button" className="flex items-center gap-1" onClick={randomPassword}>
-          <TbRefresh size={18} /> Generate New Password
-        </button>
-
-        <button
-          type="button"
-          className="flex items-center gap-1"
-          onClick={() => copyToClipboard(password)}
-        >
-          <TbCopy size={18} />
-          Copy
-        </button>
+        <RefreshButton onClick={randomPassword}>Generate New Password</RefreshButton>
+        <CopyButton value={password} />
       </div>
 
       <div className="flex flex-col gap-2">

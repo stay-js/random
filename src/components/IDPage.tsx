@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { TbCopy, TbRefresh } from 'react-icons/tb';
-import { copyToClipboard } from '@utils/copyToClipboard';
+import { CopyButton, RefreshButton } from './Button';
 
 export const IDPage: React.FC<{
   name: string;
@@ -21,22 +20,8 @@ export const IDPage: React.FC<{
       </div>
 
       <div className="flex items-center justify-between">
-        <button
-          type="button"
-          className="flex items-center gap-1"
-          onClick={() => setValue(generator())}
-        >
-          <TbRefresh size={18} /> Generate New {name}
-        </button>
-
-        <button
-          type="button"
-          className="flex items-center gap-1"
-          onClick={() => copyToClipboard(value)}
-        >
-          <TbCopy size={18} />
-          Copy
-        </button>
+        <RefreshButton onClick={() => setValue(generator())}>Generate New {name}</RefreshButton>
+        <CopyButton value={value} />
       </div>
     </section>
   );
