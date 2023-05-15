@@ -17,7 +17,7 @@ export const Textarea: React.FC<{
       )}
 
       <textarea
-        className="resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
+        className="resize-none rounded border border-[#373A40] bg-[#25262b] px-3 py-2 text-white"
         id={id}
         rows={rows}
         placeholder={placeholder}
