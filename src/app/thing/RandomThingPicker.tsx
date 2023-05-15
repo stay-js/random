@@ -17,7 +17,7 @@ export const RandomThingPicker: React.FC = () => {
   };
 
   return (
-    <section className="flex min-w-[20rem] flex-col gap-2">
+    <section className="flex w-full max-w-sm flex-col gap-2">
       <div className="text-2xl font-bold">
         Thing: <span className="text-teal-400">{value}</span>
       </div>
@@ -31,7 +31,7 @@ export const RandomThingPicker: React.FC = () => {
           <textarea
             className="w-full resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
             id="values"
-            rows={6}
+            rows={10}
             placeholder="Separate values with a newline."
             ref={ref}
           />

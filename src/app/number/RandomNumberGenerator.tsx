@@ -51,7 +51,7 @@ export const RandomNumberGenerator: React.FC = () => {
   useEffect(() => setNumber(Math.floor(Math.random() * 11)), []);
 
   return (
-    <section className="flex min-w-[20rem] flex-col gap-2">
+    <section className="flex w-full max-w-sm flex-col gap-2">
       <div className="text-2xl font-bold">
         Number: <span className="text-teal-400">{number}</span>
       </div>

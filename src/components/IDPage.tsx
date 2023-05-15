@@ -15,7 +15,7 @@ export const IDPage: React.FC<{
   if (!value) return null;
 
   return (
-    <section className="flex min-w-full flex-col gap-2 md:min-w-[55%]">
+    <section className="flex w-full max-w-3xl flex-col gap-2">
       <div
         className="max-w-full border px-4 py-2 text-xl font-bold"
         style={{ overflowWrap: 'anywhere' }}

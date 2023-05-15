@@ -56,7 +56,7 @@ export const Countdown: React.FC = () => {
   };
 
   return (
-    <section className="flex min-w-[20rem] flex-col gap-2">
+    <section className="flex w-full max-w-sm flex-col gap-2">
       <div className="flex w-full flex-col items-center font-mono text-5xl font-bold text-teal-400">
         {formatTime(time)}
       </div>
