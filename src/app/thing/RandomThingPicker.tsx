@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { Textarea } from '@components/Input';
 
 export const RandomThingPicker: React.FC = () => {
   const [value, setValue] = useState<string | null | undefined>(null);
@@ -23,19 +24,12 @@ export const RandomThingPicker: React.FC = () => {
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-sm">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="values" className="w-fit font-medium dark:text-neutral-300">
-            Separate values with a newline.
-          </label>
-
-          <textarea
-            className="resize-none rounded border border-neutral-300 px-3 py-2 text-black dark:border-[#373A40] dark:bg-[#25262b] dark:text-white"
-            id="values"
-            rows={10}
-            placeholder="Separate values with a newline."
-            ref={ref}
-          />
-        </div>
+        <Textarea
+          label="Separate values with a newline."
+          placeholder="Separate values with a newline."
+          rows={10}
+          ref={ref}
+        />
 
         <button
           type="submit"

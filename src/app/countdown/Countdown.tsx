@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { minMaxSchema } from '@app/number/RandomNumberGenerator';
+import { TextInput } from '@components/Input';
 
 const DAY_IN_SECONDS = 24 * 60 * 60;
 
@@ -63,29 +64,8 @@ export const Countdown: React.FC = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 text-sm">
         <div className="flex flex-col gap-4 sm:flex-row">
-          <div className="flex w-full flex-col gap-1">
-            <label htmlFor="min" className="w-fit font-medium dark:text-neutral-300">
-              Min:
-            </label>
-
-            <input
-              type="number"
-              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
-              {...register('min')}
-            />
-          </div>
-
-          <div className="flex w-full flex-col gap-1">
-            <label htmlFor="max" className="w-fit font-medium dark:text-neutral-300">
-              Max:
-            </label>
-
-            <input
-              type="number"
-              className="h-10 rounded border border-[#373A40] bg-[#25262b] px-2 text-sm text-neutral-400"
-              {...register('max')}
-            />
-          </div>
+          <TextInput label="Min:" {...register('min')} />
+          <TextInput label="Max:" {...register('max')} />
         </div>
 
         {errors && (
