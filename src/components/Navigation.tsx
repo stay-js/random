@@ -40,17 +40,17 @@ export const Navigation: React.FC = () => {
         <span
           className={`${
             isToggled ? 'rotate-45' : '-translate-y-2'
-          } absolute block h-0.5 w-6 bg-current transition duration-500`}
+          } absolute block h-0.5 w-6 bg-current transition-all duration-500`}
         />
         <span
           className={`${
             isToggled ? 'opacity-0' : ''
-          } absolute block h-0.5 w-4 bg-current transition duration-500`}
+          } absolute block h-0.5 w-4 bg-current transition-all duration-500`}
         />
         <span
           className={`${
             isToggled ? 'w-6 -rotate-45' : 'w-2 translate-y-2'
-          } absolute block h-0.5 bg-current transition duration-500`}
+          } absolute block h-0.5 bg-current transition-all duration-500`}
         />
       </button>
 
