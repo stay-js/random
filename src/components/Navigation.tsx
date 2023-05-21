@@ -18,8 +18,7 @@ export const Navigation: React.FC = () => {
 
   const handleToggle = () => {
     setIsToggled((value) => {
-      if (value) disableScroll.off();
-      else disableScroll.on();
+      value ? disableScroll.off() : disableScroll.on();
 
       return !value;
     });
