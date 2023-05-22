@@ -71,8 +71,8 @@ export const Navigation: React.FC = () => {
             </Link>
           </li>
 
-          {items.map(({ path, title, shortTitle }, index) => (
-            <li key={`nav-${index}`}>
+          {items.map(({ path, title, shortTitle }) => (
+            <li key={`nav-${path}`}>
               <Link
                 className={`${
                   path !== pathname ? 'lg:text-neutral-400' : ''

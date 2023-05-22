@@ -18,9 +18,9 @@ const Page: NextPage = () => (
     </Title>
 
     <section className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-      {items.map(({ title, shortTitle, description, path }, index) => (
+      {items.map(({ title, shortTitle, description, path }) => (
         <div
-          key={`items-${index}`}
+          key={`items-${path}`}
           className="flex max-w-sm flex-col gap-4 rounded border-2 border-gray-500 p-6"
         >
           <div className="flex flex-col gap-1">
