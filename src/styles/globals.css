@@ -7,5 +7,5 @@
 }
 
 main {
-  @apply container mx-auto flex flex-col items-center gap-12 px-4 pb-24 pt-4;
+  @apply container mx-auto flex flex-col items-center gap-12 px-4 pb-24 pt-12;
 }
