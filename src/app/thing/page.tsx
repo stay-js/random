@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Title } from '@components/Title';
-import { RandomThingPicker } from './RandomThingPicker';
-import { createItemMetadataByPath } from '@utils/createMetadata';
+import { Title } from '~/components/title';
+import { RandomThingPicker } from './random-thing-picker';
+import { createItemMetadataByPath } from '~/utils/create-metadata';
 
 export const metadata = createItemMetadataByPath('/thing');
 

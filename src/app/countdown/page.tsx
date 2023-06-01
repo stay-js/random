@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Title } from '@components/Title';
-import { Countdown } from './Countdown';
-import { createItemMetadataByPath } from '@utils/createMetadata';
+import { Title } from '~/components/title';
+import { Countdown } from './countdown';
+import { createItemMetadataByPath } from '~/utils/create-metadata';
 
 export const metadata = createItemMetadataByPath('/countdown');
 

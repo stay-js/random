@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Title } from '@components/Title';
-import { RandomNumberGenerator } from './RandomNumberGenerator';
-import { createItemMetadataByPath } from '@utils/createMetadata';
+import { Title } from '~/components/title';
+import { RandomNumberGenerator } from './random-number-generator';
+import { createItemMetadataByPath } from '~/utils/create-metadata';
 
 export const metadata = createItemMetadataByPath('/number');
 

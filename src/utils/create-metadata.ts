@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { items } from '@constants/items';
+import { items } from '~/constants/items';
 
 export const createMetadata = ({
   path,

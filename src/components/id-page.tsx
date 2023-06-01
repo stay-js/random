@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CopyButton, RefreshButton } from './Button';
+import { CopyButton, RefreshButton } from './button';
 
 export const IDPage: React.FC<{
   name: string;

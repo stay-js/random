@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Title } from '@components/Title';
-import { UUID } from './UUID';
-import { createItemMetadataByPath } from '@utils/createMetadata';
+import { Title } from '~/components/title';
+import { UUID } from './uuid';
+import { createItemMetadataByPath } from '~/utils/create-metadata';
 
 export const metadata = createItemMetadataByPath('/uuid');
 

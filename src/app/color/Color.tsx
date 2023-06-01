@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { RefreshButton } from '@components/Button';
+import { RefreshButton } from '~/components/button';
 
 export const Color: React.FC = () => {
   const [rgb, setRgb] = useState<string | null>(null);

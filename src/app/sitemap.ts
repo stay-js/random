@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { items } from '@constants/items';
+import { items } from '~/constants/items';
 
 const sitemap = (): MetadataRoute.Sitemap => {
   return ['', ...items.map((item) => item.path)].map((route) => ({

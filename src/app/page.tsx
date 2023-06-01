@@ -1,8 +1,8 @@
 import type { NextPage } from 'next';
 import Link from 'next/link';
-import { items } from '@constants/items';
-import { Title } from '@components/Title';
-import { createMetadata } from '@utils/createMetadata';
+import { items } from '~/constants/items';
+import { Title } from '~/components/title';
+import { createMetadata } from '~/utils/create-metadata';
 
 export const metadata = createMetadata({
   path: '',

@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
-import { Title } from '@components/Title';
-import { Color } from './Color';
-import { createItemMetadataByPath } from '@utils/createMetadata';
+import { Title } from '~/components/title';
+import { Color } from './color';
+import { createItemMetadataByPath } from '~/utils/create-metadata';
 
 export const metadata = createItemMetadataByPath('/color');
 

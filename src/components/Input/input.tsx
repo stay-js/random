@@ -1,6 +1,6 @@
 import { forwardRef, useId } from 'react';
 
-export const TextInput: React.FC<{
+export const Input: React.FC<{
   label?: string;
   placeholder?: string;
   ref?: React.Ref<HTMLInputElement>;
@@ -27,4 +27,4 @@ export const TextInput: React.FC<{
   );
 });
 
-TextInput.displayName = 'TextInput';
+Input.displayName = 'TextInput';

@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { Switch } from '@headlessui/react';
-import { CopyButton, RefreshButton } from '@components/Button';
+import { cn } from '~/utils/cn';
+import { CopyButton, RefreshButton } from '~/components/button';
 
 const Toggle: React.FC<{
   label: string;
@@ -14,14 +15,16 @@ const Toggle: React.FC<{
       <Switch
         checked={checked}
         onChange={onChange}
-        className={`${
-          checked ? 'bg-teal-400' : 'bg-neutral-700'
-        } relative inline-flex h-6 w-11 items-center rounded-full`}
+        className={cn(
+          'relative inline-flex h-6 w-11 items-center rounded-full',
+          checked ? 'bg-teal-400' : 'bg-neutral-700',
+        )}
       >
         <span
-          className={`${
-            checked ? 'translate-x-6' : 'translate-x-1'
-          } inline-block h-4 w-4 transform rounded-full bg-white transition`}
+          className={cn(
+            'inline-block h-4 w-4 transform rounded-full bg-white transition',
+            checked ? 'translate-x-6' : 'translate-x-1',
+          )}
         />
       </Switch>
       <Switch.Label>{label}</Switch.Label>

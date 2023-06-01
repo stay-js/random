@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { TextInput } from '@components/Input';
-import { Button } from '@components/Button';
+import { Input } from '~/components/input';
+import { Button } from '~/components/button';
 
 // I know I could use z.coerce.number() but then an empty string would be converted to 0 and no error message would be shown.
 
@@ -60,8 +60,8 @@ export const RandomNumberGenerator: React.FC = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 text-sm">
         <div className="flex flex-col gap-4 sm:flex-row">
-          <TextInput label="Min:" {...register('min')} />
-          <TextInput label="Max:" {...register('max')} />
+          <Input label="Min:" {...register('min')} />
+          <Input label="Max:" {...register('max')} />
         </div>
 
         {errors && (

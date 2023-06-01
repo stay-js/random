@@ -5,9 +5,9 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { minMaxSchema } from '@app/number/RandomNumberGenerator';
-import { TextInput } from '@components/Input';
-import { Button } from '@components/Button';
+import { minMaxSchema } from '~/app/number/random-number-generator';
+import { Input } from '~/components/input';
+import { Button } from '~/components/button';
 
 const DAY_IN_SECONDS = 24 * 60 * 60;
 
@@ -65,8 +65,8 @@ export const Countdown: React.FC = () => {
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 text-sm">
         <div className="flex flex-col gap-4 sm:flex-row">
-          <TextInput label="Min:" {...register('min')} />
-          <TextInput label="Max:" {...register('max')} />
+          <Input label="Min:" {...register('min')} />
+          <Input label="Max:" {...register('max')} />
         </div>
 
         {errors && (

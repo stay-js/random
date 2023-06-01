@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import disableScroll from 'disable-scroll';
-import { items } from '@constants/items';
-import { cn } from '@utils/cn';
+import { items } from '~/constants/items';
+import { cn } from '~/utils/cn';
 
 const Item: React.FC<{
   path: string;

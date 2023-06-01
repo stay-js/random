@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { Textarea } from '@components/Input';
-import { Button } from '@components/Button';
+import { Textarea } from '~/components/input';
+import { Button } from '~/components/button';
 
 export const RandomThingPicker: React.FC = () => {
   const [value, setValue] = useState<string | null | undefined>(null);

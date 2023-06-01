@@ -1,2 +1,2 @@
-export * from './Textarea';
-export * from './TextInput';
+export * from './textarea';
+export * from './input';

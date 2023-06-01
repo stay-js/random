@@ -1,6 +1,6 @@
-import { copyToClipboard } from '@utils/copyToClipboard';
+import { copyToClipboard } from '~/utils/copy-to-clipboard';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
-import { cn } from '@utils/cn';
+import { cn } from '~/utils/cn';
 
 export const Button: React.FC<{
   type?: 'button' | 'submit' | 'reset';
