@@ -1,5 +1,6 @@
 import { copyToClipboard } from '@utils/copyToClipboard';
 import { TbCopy, TbRefresh } from 'react-icons/tb';
+import { cn } from '@utils/cn';
 
 export const Button: React.FC<{
   type?: 'button' | 'submit' | 'reset';
@@ -8,7 +9,10 @@ export const Button: React.FC<{
 }> = ({ type = 'button', className = '', children }) => (
   <button
     type={type}
-    className={`h-10 cursor-pointer rounded bg-teal-400 text-sm font-bold text-white transition-colors hover:bg-teal-600 ${className}`}
+    className={cn(
+      'h-10 cursor-pointer rounded bg-teal-400 text-sm font-bold text-white transition-colors hover:bg-teal-600',
+      className,
+    )}
   >
     {children}
   </button>

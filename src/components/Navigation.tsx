@@ -5,11 +5,33 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import disableScroll from 'disable-scroll';
 import { items } from '@constants/items';
+import { cn } from '@utils/cn';
+
+const Item: React.FC<{
+  path: string;
+  children: React.ReactNode;
+  onClick: () => void;
+}> = ({ path, children, onClick }) => {
+  const pathname = usePathname();
+
+  return (
+    <li>
+      <Link
+        className={cn(
+          'relative flex font-bold text-white transition-colors after:absolute after:-bottom-4 after:h-px after:w-full after:bg-neutral-600 lg:static lg:block lg:rounded-md lg:px-3 lg:py-2 lg:font-medium lg:after:hidden lg:hover:bg-neutral-800',
+          path !== pathname && 'lg:text-neutral-400',
+        )}
+        onClick={onClick}
+        href={path}
+      >
+        {children}
+      </Link>
+    </li>
+  );
+};
 
 export const Navigation: React.FC = () => {
   const [isToggled, setIsToggled] = useState<boolean>(false);
-
-  const pathname = usePathname();
 
   const handleClose = () => {
     setIsToggled(false);
@@ -37,53 +59,41 @@ export const Navigation: React.FC = () => {
         onClick={handleToggle}
       >
         <span
-          className={`${
-            isToggled ? 'rotate-45' : '-translate-y-2'
-          } absolute block h-0.5 w-6 bg-current transition-all duration-500`}
+          className={cn(
+            'absolute block h-0.5 w-6 bg-current transition-all duration-500',
+            isToggled ? 'rotate-45' : '-translate-y-2',
+          )}
         />
         <span
-          className={`${
-            isToggled ? 'opacity-0' : ''
-          } absolute block h-0.5 w-4 bg-current transition-all duration-500`}
+          className={cn(
+            'absolute block h-0.5 w-4 bg-current transition-all duration-500',
+            isToggled && 'opacity-0',
+          )}
         />
         <span
-          className={`${
-            isToggled ? 'w-6 -rotate-45' : 'w-2 translate-y-2'
-          } absolute block h-0.5 bg-current transition-all duration-500`}
+          className={cn(
+            'absolute block h-0.5 bg-current transition-all duration-500',
+            isToggled ? 'w-6 -rotate-45' : 'w-2 translate-y-2',
+          )}
         />
       </button>
 
       <div
-        className={`${
-          !isToggled ? 'translate-x-full' : ''
-        } fixed left-0 top-16 h-screen w-full bg-neutral-900 px-6 py-4 transition duration-500 ease-in-out lg:static lg:flex lg:h-16 lg:w-fit lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:transition-none`}
+        className={cn(
+          'fixed left-0 top-16 h-screen w-full bg-neutral-900 px-6 py-4 transition duration-500 ease-in-out lg:static lg:flex lg:h-16 lg:w-fit lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:transition-none',
+          !isToggled && 'translate-x-full',
+        )}
       >
         <ul className="content flex flex-col gap-8 lg:w-fit lg:flex-row lg:gap-0">
-          <li>
-            <Link
-              className={`${
-                '/' !== pathname ? 'lg:text-neutral-400' : ''
-              } relative flex font-bold text-white transition-colors after:absolute after:-bottom-4 after:h-px after:w-full after:bg-neutral-600 lg:static lg:block lg:rounded-md lg:px-3 lg:py-2 lg:font-medium lg:after:hidden lg:hover:bg-neutral-800`}
-              onClick={handleClose}
-              href="/"
-            >
-              Home
-            </Link>
-          </li>
+          <Item path="/" onClick={handleClose}>
+            Home
+          </Item>
 
           {items.map(({ path, title, shortTitle }) => (
-            <li key={`nav-${path}`}>
-              <Link
-                className={`${
-                  path !== pathname ? 'lg:text-neutral-400' : ''
-                } relative flex font-bold text-white transition-colors after:absolute after:-bottom-4 after:h-px after:w-full after:bg-neutral-600 lg:static lg:block lg:rounded-md lg:px-3 lg:py-2 lg:font-medium lg:after:hidden lg:hover:bg-neutral-800`}
-                onClick={handleClose}
-                href={path}
-              >
-                <span className="lg:hidden">{title}</span>
-                <span className="hidden lg:block">{shortTitle}</span>
-              </Link>
-            </li>
+            <Item key={`nav-${path}`} path={path} onClick={handleClose}>
+              <span className="lg:hidden">{title}</span>
+              <span className="hidden lg:block">{shortTitle}</span>
+            </Item>
           ))}
         </ul>
       </div>
