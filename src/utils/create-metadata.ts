@@ -21,6 +21,7 @@ export const createMetadata = ({
     'random, stay random, cuid, collision resistant unique identifier, guid, globally unique identifier, uuid, universally unique identifier, rng, random number generator, rtp, random thing picker, rcg, random color generator, random countdown, random password generator, password, password generator, stay, znagy, znagy.hu',
 
   themeColor: '#2dd4bf',
+  colorScheme: 'dark',
 
   title: absoluteTitle ?? `${title} - Stay Random`,
   description,
@@ -41,7 +42,7 @@ export const createMetadata = ({
 
   openGraph: {
     type: 'website',
-    url: `https://znagy.hu${path}`,
+    url: `https://random.znagy.hu${path}`,
     title: absoluteTitle ?? `${title} - Stay Random`,
     description,
     siteName: 'Stay Random',
