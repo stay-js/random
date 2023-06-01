@@ -1,9 +1,9 @@
 import { Toaster } from 'react-hot-toast';
 import { Analytics } from '@vercel/analytics/react';
-import { Footer } from '~/components/Footer';
-import { Navigation } from '~/components/Navigation';
+import { Footer } from '~/components/footer';
+import { Navigation } from '~/components/navigation';
 
-import '@styles/globals.css';
+import '~/styles/globals.css';
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
