@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import disableScroll from 'disable-scroll';
 import { items } from '~/constants/items';
 import { cn } from '~/utils/cn';
 
@@ -35,12 +34,14 @@ export const Navigation: React.FC = () => {
 
   const handleClose = () => {
     setIsToggled(false);
-    disableScroll.off();
+    document.body.style.overflowY = 'scroll';
   };
 
   const handleToggle = () => {
     setIsToggled((value) => {
-      value ? disableScroll.off() : disableScroll.on();
+      value
+        ? (document.body.style.overflowY = 'scroll')
+        : (document.body.style.overflowY = 'hidden');
 
       return !value;
     });
@@ -80,8 +81,8 @@ export const Navigation: React.FC = () => {
 
       <div
         className={cn(
-          'fixed left-0 top-16 h-screen w-full bg-neutral-900 px-6 py-4 transition duration-500 ease-in-out lg:static lg:flex lg:h-16 lg:w-fit lg:translate-x-0 lg:items-center lg:bg-transparent lg:p-0 lg:transition-none',
-          !isToggled && 'translate-x-full',
+          'fixed left-0 top-16 h-[calc(100vh-4rem)] w-full overflow-y-auto bg-neutral-900 px-6 pb-20 pt-4 lg:static lg:flex lg:h-fit lg:w-fit lg:p-0',
+          !isToggled && 'hidden',
         )}
       >
         <ul className="content flex flex-col gap-8 lg:w-fit lg:flex-row lg:gap-0">

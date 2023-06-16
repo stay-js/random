@@ -65,7 +65,7 @@ export const Password: React.FC = () => {
 
   return (
     <section className="flex w-full max-w-3xl flex-col gap-2">
-      <div className="border px-4 py-2 text-xl font-bold" style={{ overflowWrap: 'anywhere' }}>
+      <div className="border px-6 py-2 text-xl font-bold" style={{ overflowWrap: 'anywhere' }}>
         {password}
       </div>
 

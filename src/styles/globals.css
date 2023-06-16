@@ -7,5 +7,10 @@
 }
 
 main {
-  @apply container mx-auto flex flex-col items-center gap-12 px-4 pb-24 pt-12;
+  @apply container mx-auto flex flex-col items-center gap-12 px-6 pb-24 pt-12;
+}
+
+/* components/navigation.tsx - if dvh is available override h-[calc(100vh-4rem)] => height: calc(100dvh - 4rem) */
+.h-\[calc\(100vh-4rem\)\] {
+  height: calc(100dvh - 4rem);
 }
