@@ -1,6 +1,6 @@
 'use client';
 
 import { IDPage } from '~/components/id-page';
-import cuid from 'cuid';
+import cuid2 from '@paralleldrive/cuid2';
 
-export const CUID: React.FC = () => <IDPage generator={cuid} name="CUID" />;
+export const CUID: React.FC = () => <IDPage generator={cuid2.createId} name="CUID" />;
